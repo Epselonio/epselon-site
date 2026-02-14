@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epselon | Revenue Engineering for B2B Teams</title>
+  <meta name="description" content="Epselon builds AI-powered pipeline systems that identify the right accounts at the right moment. Better targeting, better timing, better pipeline.">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="favicon-180.png">
+  <link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#" class="nav__logo">
+        <img src="logo.png" alt="Epselon" class="nav__logo-img">
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="#problem" data-section="problem">Problem</a>
+        <a href="#how-it-works" data-section="how-it-works">How It Works</a>
+        <a href="#diagnostic" data-section="diagnostic">Diagnostic</a>
+        <a href="#results" data-section="results">Results</a>
+        <a href="#faq" data-section="faq">FAQ</a>
+      </div>
+      <a href="#diagnostic" class="btn btn--sm btn--primary nav__cta">Book a Diagnostic</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="nav__mobile" id="navMobile">
+      <a href="#problem">Problem</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#diagnostic">Diagnostic</a>
+      <a href="#results">Results</a>
+      <a href="#faq">FAQ</a>
+      <a href="#diagnostic" class="btn btn--primary" style="margin-top: 0.5rem; text-align: center;">Book a Diagnostic</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero__container">
+      <div class="hero__badge anim-hero" data-delay="0">Revenue Engineering for B2B Teams</div>
+      <h1 class="hero__title anim-hero" data-delay="1">
+        The teams booking<br>more meetings
+        <span class="hero__title--accent">aren't chasing more accounts</span>
+      </h1>
+      <p class="hero__sub anim-hero" data-delay="2">
+        They've stopped casting wide nets and started targeting the right accounts
+        at the right moment. We build the signal detection and targeting infrastructure
+        that makes that possible.
+      </p>
+      <div class="hero__cta anim-hero" data-delay="3">
+        <a href="#diagnostic" class="btn btn--primary btn--lg">Book a Revenue Diagnostic</a>
+        <a href="#how-it-works" class="btn btn--outline btn--lg">See How It Works</a>
+      </div>
+      <span class="hero__cta-note anim-hero" data-delay="3">Standalone engagement &middot; Delivered in 2 weeks</span>
+      <div class="hero__visual anim-hero" data-delay="4">
+        <div class="hero__dashboard">
+          <div class="hero__dashboard-header">
+            <span class="hero__dashboard-dot"></span>
+            <span class="hero__dashboard-dot"></span>
+            <span class="hero__dashboard-dot"></span>
+            <span class="hero__dashboard-label">Signal Monitor</span>
+          </div>
+          <div class="hero__grid">
+            <div class="hero__signal-card">
+              <div class="signal-card__dot signal-card__dot--green"></div>
+              <div class="signal-card__content">
+                <span class="signal-card__label">Signal Detected</span>
+                <span class="signal-card__value">New CTO appointed</span>
+              </div>
+              <span class="signal-card__score">92</span>
+            </div>
+            <div class="hero__signal-card">
+              <div class="signal-card__dot signal-card__dot--blue"></div>
+              <div class="signal-card__content">
+                <span class="signal-card__label">Funding Event</span>
+                <span class="signal-card__value">Series B &middot; $18M</span>
+              </div>
+              <span class="signal-card__score">87</span>
+            </div>
+            <div class="hero__signal-card">
+              <div class="signal-card__dot signal-card__dot--amber"></div>
+              <div class="signal-card__content">
+                <span class="signal-card__label">Tech Stack Change</span>
+                <span class="signal-card__value">Migrating CRM platform</span>
+              </div>
+              <span class="signal-card__score">78</span>
+            </div>
+            <div class="hero__signal-card">
+              <div class="signal-card__dot signal-card__dot--green"></div>
+              <div class="signal-card__content">
+                <span class="signal-card__label">Hiring Surge</span>
+                <span class="signal-card__value">4 SDR roles posted</span>
+              </div>
+              <span class="signal-card__score">85</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOGO BAR ===== -->
+  <section class="logos">
+    <div class="container">
+      <p class="logos__label">Pipeline infrastructure for B2B teams across</p>
+      <div class="logos__track">
+        <div class="logos__row">
+          <span class="logos__item">SaaS</span>
+          <span class="logos__divider">&middot;</span>
+          <span class="logos__item">FinTech</span>
+          <span class="logos__divider">&middot;</span>
+          <span class="logos__item">GovTech</span>
+          <span class="logos__divider">&middot;</span>
+          <span class="logos__item">Cybersecurity</span>
+          <span class="logos__divider">&middot;</span>
+          <span class="logos__item">Professional Services</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM ===== -->
+  <section class="problem" id="problem">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Problem</span>
+        <h2 class="section-title">Your targeting is broken.<br>Here's why.</h2>
+        <p class="section-sub">
+          Most B2B pipeline efforts are targeting the wrong accounts at the wrong time
+          with messages that sound like everyone else's. These are the three
+          patterns we see killing pipeline.
+        </p>
+      </div>
+      <div class="problem__grid">
+        <div class="problem__card">
+          <div class="problem__icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/><path d="M24 14V24L30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="problem__card-title">Wrong accounts, wrong timing</h3>
+          <p class="problem__card-body">
+            Your SDRs are working lists built on firmographics &mdash; right industry,
+            right size, right title. But that tells you nothing about timing.
+            You're reaching companies that technically fit but have zero urgency right now.
+          </p>
+          <div class="problem__fix">
+            <span class="problem__fix-label">What changes:</span>
+            Signal-based targeting identifies accounts showing actual buying
+            indicators &mdash; leadership changes, funding, tech stack shifts,
+            expansion signals. The right target list also dramatically reduces
+            wasted spend across your paid channels.
+          </div>
+        </div>
+        <div class="problem__card">
+          <div class="problem__icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 18H42" stroke="currentColor" stroke-width="2"/><path d="M16 26H32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 32H28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="problem__card-title">Every outreach sounds the same</h3>
+          <p class="problem__card-body">
+            AI-personalised outreach was a competitive advantage for about six months.
+            Now every channel is flooded with "I noticed your company..." messages.
+            Response rates are dropping because the space is crowded with
+            better-sounding noise.
+          </p>
+          <div class="problem__fix">
+            <span class="problem__fix-label">What changes:</span>
+            Outreach built around pain point segments, not personalisation tokens.
+            Every account matched to a specific friction point your product solves.
+          </div>
+        </div>
+        <div class="problem__card">
+          <div class="problem__icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><rect x="26" y="8" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><rect x="8" y="26" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><rect x="26" y="26" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/></svg>
+          </div>
+          <h3 class="problem__card-title">Tools but no system</h3>
+          <p class="problem__card-body">
+            You've bought Clay, or Apollo, or a sequencing tool. Maybe all three.
+            They're sitting half-configured because nobody has the time or expertise
+            to build a proper pipeline from data to meeting. You're paying for
+            infrastructure that isn't producing.
+          </p>
+          <div class="problem__fix">
+            <span class="problem__fix-label">What changes:</span>
+            One integrated system &mdash; research, enrichment, scoring, segmentation,
+            copy, and execution &mdash; built and operated by a team that does this every day.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how" id="how-it-works">
+    <div class="how__bg-shapes"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag section-tag--light">How It Works</span>
+        <h2 class="section-title section-title--light">Start with a diagnostic.<br>Scale into a system.</h2>
+      </div>
+      <div class="how__flow">
+        <div class="how__timeline-line"></div>
+        <div class="how__step how__step--highlight">
+          <div class="how__step-number">01</div>
+          <div class="how__step-content">
+            <h3 class="how__step-title">Revenue Diagnostic</h3>
+            <p class="how__step-time">2 Weeks &middot; Standalone Engagement</p>
+            <p class="how__step-body">
+              Discovery workshop. ICP definition. Friction point segmentation.
+              Competitive positioning. 500+ scored sample accounts to prove
+              the methodology works with your market. Yours to keep either way.
+            </p>
+            <ul class="how__step-outputs">
+              <li>ICP Framework</li>
+              <li>Pain Point Segments</li>
+              <li>Scored Account List</li>
+              <li>Recommendations</li>
+            </ul>
+          </div>
+        </div>
+        <div class="how__connector"><svg viewBox="0 0 24 40" fill="none"><path d="M12 0V40M12 40L4 32M12 40L20 32" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div class="how__step">
+          <div class="how__step-number">02</div>
+          <div class="how__step-content">
+            <h3 class="how__step-title">Revenue Engine</h3>
+            <p class="how__step-time">Weeks 3-8 &middot; Full Build</p>
+            <p class="how__step-body">
+              Full signal-based targeting system. Multi-stage scoring.
+              Pain-point segmented messaging across personas. A/B variants
+              and follow-up sequences. Campaign infrastructure and CRM integration.
+            </p>
+            <ul class="how__step-outputs">
+              <li>Signal Detection System</li>
+              <li>Scored Prospect Database</li>
+              <li>Campaign Copy &amp; Sequences</li>
+              <li>CRM Integration</li>
+            </ul>
+          </div>
+        </div>
+        <div class="how__connector"><svg viewBox="0 0 24 40" fill="none"><path d="M12 0V40M12 40L4 32M12 40L20 32" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div class="how__step">
+          <div class="how__step-number">03</div>
+          <div class="how__step-content">
+            <h3 class="how__step-title">Operate</h3>
+            <p class="how__step-time">Ongoing &middot; Monthly Retainer</p>
+            <p class="how__step-body">
+              Campaigns live. Continuous signal monitoring. Optimisation based
+              on real response data, not guesswork. We operate the system so
+              your team focuses on closing.
+            </p>
+            <ul class="how__step-outputs">
+              <li>Live Campaign Execution</li>
+              <li>Pipeline Reporting</li>
+              <li>Continuous Optimisation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIAGNOSTIC ===== -->
+  <section class="diagnostic" id="diagnostic">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Start Here</span>
+        <h2 class="section-title">The Revenue Diagnostic</h2>
+        <p class="section-sub">
+          A standalone engagement that maps your market, tests our methodology
+          against real accounts, and gives you a usable framework &mdash; whether
+          you work with us afterwards or not.
+        </p>
+      </div>
+      <div class="diagnostic__layout">
+        <div class="diagnostic__includes">
+          <h3 class="diagnostic__includes-title">What you get</h3>
+          <div class="diagnostic__item">
+            <div class="diagnostic__item-num">1</div>
+            <div>
+              <h4>ICP Framework</h4>
+              <p>Qualification criteria, verification methods, estimated addressable market. Actual scoring criteria your team can use.</p>
+            </div>
+          </div>
+          <div class="diagnostic__item">
+            <div class="diagnostic__item-num">2</div>
+            <div>
+              <h4>Friction Point Segmentation</h4>
+              <p>3-6 labelled pain point segments based on what triggers buying decisions. Urgency drivers, solution alignment, observable signals.</p>
+            </div>
+          </div>
+          <div class="diagnostic__item">
+            <div class="diagnostic__item-num">3</div>
+            <div>
+              <h4>Persona Mapping</h4>
+              <p>Who's in the buying decision, what each person cares about, messaging across the persona x segment matrix.</p>
+            </div>
+          </div>
+          <div class="diagnostic__item">
+            <div class="diagnostic__item-num">4</div>
+            <div>
+              <h4>Competitive Positioning</h4>
+              <p>How you sit against alternatives &mdash; competitors, DIY, doing nothing &mdash; with objection handling for each.</p>
+            </div>
+          </div>
+          <div class="diagnostic__item">
+            <div class="diagnostic__item-num">5</div>
+            <div>
+              <h4>Scored Account List</h4>
+              <p>500+ real accounts researched and scored against your ICP. Qualification score, tier, segment, research summary. The proof point.</p>
+            </div>
+          </div>
+          <div class="diagnostic__item">
+            <div class="diagnostic__item-num">6</div>
+            <div>
+              <h4>Recommendations</h4>
+              <p>Campaign structure, channel strategy, timeline, and investment to turn the diagnostic into a running pipeline.</p>
+            </div>
+          </div>
+        </div>
+        <div class="diagnostic__cta-card">
+          <div class="diagnostic__price-tag">2-Week Engagement</div>
+          <h3 class="diagnostic__cta-title">Prove the methodology with your market</h3>
+          <p class="diagnostic__cta-body">
+            90-minute workshop. Full deliverable in 2 weeks.
+            Investment credited if you proceed to a full engagement.
+          </p>
+          <ul class="diagnostic__checklist">
+            <li>Standalone value &mdash; yours to keep either way</li>
+            <li>500+ scored sample accounts</li>
+            <li>Delivered in 2 weeks</li>
+            <li>B2B companies with $50k+ deal sizes</li>
+          </ul>
+          <a href="https://calendly.com/epselon/enquiry" class="btn btn--primary btn--lg btn--full" target="_blank" rel="noopener">Book a Revenue Diagnostic</a>
+          <p class="diagnostic__cta-note">30-minute intro call first. No commitment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WEBINAR ===== -->
+  <section class="webinar">
+    <div class="webinar__bg-decor"></div>
+    <div class="container">
+      <div class="webinar__inner">
+        <div class="webinar__content">
+          <span class="section-tag section-tag--light">Upcoming Session</span>
+          <h2 class="webinar__title">Why Volume-Based Outreach Is Dying &mdash; And What to Build Instead</h2>
+          <p class="webinar__body">
+            A 45-minute breakdown of why volume-based outreach is hitting diminishing returns,
+            what signal-based targeting looks like in practice, and how to build a pipeline
+            system that identifies the right accounts at the right moment.
+          </p>
+          <div class="webinar__details">
+            <div class="webinar__detail">
+              <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 9H18" stroke="currentColor" stroke-width="1.5"/><path d="M7 2V6M13 2V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Thursday 27 February, 2026</span>
+            </div>
+            <div class="webinar__detail">
+              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 6V10L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>12:00 PM AEST &middot; 45 min</span>
+            </div>
+            <div class="webinar__detail">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M3 5L10 11L17 5" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Live on Zoom &middot; Recording sent after</span>
+            </div>
+          </div>
+          <a href="https://calendly.com/epselon/enquiry" class="btn btn--white btn--lg" target="_blank" rel="noopener">Register for Free</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS / TESTIMONIALS ===== -->
+  <section class="results" id="results">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Results</span>
+        <h2 class="section-title">What our customers are saying</h2>
+      </div>
+      <div class="testimonials__featured">
+        <div class="testimonials__card testimonials__card--hero">
+          <div class="testimonials__card-inner">
+            <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
+            <blockquote class="testimonials__text testimonials__text--lg">
+              Over the past year, we've gained about five repeat business customers, which I'm very happy with. Our return on investment is <strong class="testimonials__highlight">8.2X against spend.</strong> This isn't just one-off wins; it's compounding growth. If we add another six clients next year, it just keeps scaling.
+            </blockquote>
+            <div class="testimonials__author">
+              <div class="testimonials__author-avatar">SD</div>
+              <div class="testimonials__author-info">
+                <span class="testimonials__name">Shaun Deacon</span>
+                <span class="testimonials__role">Managing Director at White Bay</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials__metric">
+            <span class="testimonials__metric-number">8.2x</span>
+            <span class="testimonials__metric-label">Return on<br>investment</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonials__grid testimonials__grid--three">
+        <div class="testimonials__card">
+          <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
+          <blockquote class="testimonials__text">
+            The operational improvements from Epselon's work have already had a noticeable impact. Their team not only provided both operational understanding and technical expertise, but also took the time to understand our business. They possessed a deep understanding of our needs and deliver efficient, tailored solutions. I would highly recommend working with Epselon.
+          </blockquote>
+          <div class="testimonials__author">
+            <div class="testimonials__author-avatar">JH</div>
+            <div class="testimonials__author-info">
+              <span class="testimonials__name">Jasmine Hikuroa</span>
+              <span class="testimonials__role">Corporate Account Manager at H&amp;L</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials__card">
+          <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
+          <blockquote class="testimonials__text">
+            Working with Epselon has been transformative. Their hyper-personalized strategy helped us reach qualified prospects within our ideal customer profile. The sophistication and precision were unparalleled, elevating our prospecting efforts to new heights compared to previous campaigns.
+          </blockquote>
+          <div class="testimonials__author">
+            <div class="testimonials__author-avatar">SC</div>
+            <div class="testimonials__author-info">
+              <span class="testimonials__name">Simon Chin</span>
+              <span class="testimonials__role">CEO at Flowstate</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials__card">
+          <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
+          <blockquote class="testimonials__text">
+            If you're hesitant about outreach, give Epselon a try. They understand agencies, fine-tune messaging for your audience, and deliver results. The investment is small compared to the upside &mdash; consistent, high-quality leads that fuel long-term business growth.
+          </blockquote>
+          <div class="testimonials__author">
+            <div class="testimonials__author-avatar">EW</div>
+            <div class="testimonials__author-info">
+              <span class="testimonials__name">Ed Womersley</span>
+              <span class="testimonials__role">Director &amp; Founder at Hustle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Team</span>
+        <h2 class="section-title">Meet the people behind<br>your pipeline</h2>
+        <p class="section-sub">
+          GTM engineers who build and operate signal-based pipeline systems every day.
+        </p>
+      </div>
+      <div class="team__grid">
+        <div class="team__member">
+          <div class="team__photo">
+            <img src="team-lex.png" alt="Lex Bennett" loading="lazy">
+          </div>
+          <h3 class="team__name">Lex Bennett</h3>
+          <p class="team__role">Lead GTM Engineer</p>
+        </div>
+        <div class="team__member">
+          <div class="team__photo">
+            <img src="team-tim.png" alt="Tim Sloan" loading="lazy">
+          </div>
+          <h3 class="team__name">Tim Sloan</h3>
+          <p class="team__role">GTM Engineer</p>
+        </div>
+        <div class="team__member">
+          <div class="team__photo">
+            <img src="team-tristan.png" alt="Tristan Sauls" loading="lazy">
+          </div>
+          <h3 class="team__name">Tristan Sauls</h3>
+          <p class="team__role">GTM Engineer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Common questions</h2>
+      </div>
+      <div class="faq__list">
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>We already have an outbound agency / SDR team doing this.</span>
+            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>That's actually the ideal starting point. We're not replacing your team or agency &mdash; we're building the targeting and research infrastructure that makes them more effective. Most outbound teams work lists built on firmographics. We add the signal layer that tells them which accounts to prioritise right now. Your team still does the selling. They just spend time on accounts in an active buying window.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>We tried outbound and it didn't work for us.</span>
+            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>When most companies say outbound didn't work, what they mean is volume-based outreach didn't work. And they're right &mdash; that approach is broken for considered-purchase B2B. What we build is fundamentally different. We start with signal detection and pain point segmentation before a single message gets sent. The diagnostic answers whether our methodology fits your market in two weeks &mdash; with real data, not theory.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Can't we just set up Clay / Apollo ourselves?</span>
+            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>You can, and some of our clients started there. The challenge isn't the tool &mdash; it's the methodology. Clay is a data enrichment platform. It doesn't tell you which accounts to target, how to score them, what signals matter for your market, or how to segment by pain point. We use Clay as one layer in a larger system. The value isn't in configuring a tool &mdash; it's in the research, scoring, and segmentation logic that drives it.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>What does a full engagement cost?</span>
+            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>Pricing depends on scope and is discussed on the intro call. For a company running $50k+ deals, one or two closed deals per quarter typically covers the investment. The diagnostic exists so you don't have to take anything on faith &mdash; if the 50 sample accounts don't make you think "I want 5,000 of these," we part ways and you keep the deliverable.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Can you guarantee meetings or leads?</span>
+            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>We don't guarantee meeting numbers because that incentivises the wrong behaviour. Agencies guaranteeing 20 meetings a month spam 50,000 people to hit their number &mdash; you end up with unqualified conversations and a burnt domain. Campaigns typically produce qualified responses within 4-6 weeks of launch. But if you need leads by next Friday, we're not the right fit.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>How is this different from a lead gen agency?</span>
+            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>Lead gen agencies sell volume. They're optimising for meetings booked, which means bigger lists and more touches. We're a revenue engineering firm &mdash; we build the infrastructure that identifies which accounts matter and why. The difference shows up in meeting quality, response rates, and pipeline that actually converts.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>What industries do you work with?</span>
+            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq__answer">
+            <p>B2B companies with considered purchase cycles and deal sizes above $50k AUD. We've built systems across SaaS, FinTech, GovTech, cybersecurity, and professional services. The methodology is industry-agnostic &mdash; the diagnostic adapts it to your specific market.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER CTA ===== -->
+  <section class="footer-cta">
+    <div class="footer-cta__bg-glow"></div>
+    <div class="container">
+      <h2 class="footer-cta__title">Stop chasing more accounts.<br>Start targeting the right ones.</h2>
+      <p class="footer-cta__sub">
+        The Revenue Diagnostic proves our methodology works with your market &mdash;
+        in two weeks, with real data.
+      </p>
+      <a href="#diagnostic" class="btn btn--white btn--lg">Book a Revenue Diagnostic</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__gradient-line"></div>
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">
+            <img src="logo-header.png" alt="Epselon" class="nav__logo-img nav__logo-img--light">
+          </a>
+          <p class="footer__tagline">Signal-based pipeline systems for B2B sales teams.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#diagnostic">Revenue Diagnostic</a>
+            <a href="#results">Results</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div class="footer__col">
+            <h4>Connect</h4>
+            <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Epselon.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
