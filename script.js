@@ -88,9 +88,8 @@ document.querySelectorAll('.faq__question').forEach(button => {
 
 // ===== SCROLL ANIMATIONS WITH STAGGER =====
 const fadeGroups = [
-  { selector: '.problem__card', stagger: 140 },
+  { selector: '.services__card', stagger: 140 },
   { selector: '.how__step', stagger: 160 },
-  { selector: '.diagnostic__item', stagger: 90 },
   { selector: '.testimonials__card', stagger: 200 },
   { selector: '.faq__item', stagger: 70 },
 ];
@@ -103,7 +102,7 @@ fadeGroups.forEach(group => {
   });
 });
 
-document.querySelectorAll('.section-header, .diagnostic__cta-card, .webinar__inner, .footer-cta .container').forEach(el => {
+document.querySelectorAll('.section-header, .footer-cta .container').forEach(el => {
   el.classList.add('fade-in');
 });
 
