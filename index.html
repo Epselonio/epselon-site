@@ -1,498 +1,353 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Epselon | Revenue Engineering for B2B Teams</title>
-  <meta name="description" content="Epselon builds signal-based pipeline infrastructure for B2B sales teams. Signal Reports, Total Market List Builds, GTM Infrastructure, and Audience Refresh Retainers.">
-  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="favicon-180.png">
-  <link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Wistia: uncomment and replace VIDEO_ID when ready
-  <script src="https://fast.wistia.com/embed/medias/VIDEO_ID.jsonp" async></script>
-  <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-  -->
+  <title>Epselon Signals | Buying-signal intelligence for construction, industrial, logistics and B2B finance</title>
+  <meta name="description" content="We watch the public record and tell your sales team which accounts in their market are about to buy, with the proof attached. Built for the industries the SaaS tools forgot.">
+  <link rel="canonical" href="https://epselon.io/">
+  <meta property="og:title" content="Epselon Signals | Buying-signal intelligence for the industries the SaaS tools forgot">
+  <meta property="og:description" content="We watch the public record and tell your sales team which accounts in their market are about to buy, with the proof attached.">
+  <meta property="og:url" content="https://epselon.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://epselon.io/logo.png">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/eps.css">
 </head>
 <body>
 
-  <!-- ===== NAV ===== -->
-  <nav class="nav" id="nav">
-    <div class="nav__inner container">
-      <a href="#" class="nav__logo">
-        <img src="logo.png" alt="Epselon" class="nav__logo-img">
+  <header class="eps-nav">
+    <div class="eps-nav__inner">
+      <a class="eps-nav__logo" href="/" aria-label="Epselon home">
+        <img src="/assets/epselon-logo.png" alt="epselon">
       </a>
-      <div class="nav__links" id="navLinks">
-        <a href="#services" data-section="services">Services</a>
-        <a href="#how-it-works" data-section="how-it-works">How We Work</a>
-        <a href="#results" data-section="results">Results</a>
-        <a href="#faq" data-section="faq">FAQ</a>
-      </div>
-      <a href="https://calendly.com/epselon/enquiry" class="btn btn--sm btn--primary nav__cta" target="_blank" rel="noopener">Talk to Us</a>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="eps-nav__toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="eps-nav__links" id="nav-links" aria-label="Main">
+        <a href="#product">Product</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#industries">Industries</a>
+        <a href="/services/">Services</a>
+        <a href="#faq">FAQ</a>
+        <div class="eps-nav__cta">
+          <a class="eps-btn eps-btn--md eps-btn--ghost" href="https://calendly.com/epselon/enquiry">Talk to us</a>
+          <a class="eps-btn eps-btn--md eps-btn--primary" href="https://signals-demo.epselon.io">See a live demo</a>
+        </div>
+      </nav>
     </div>
-    <!-- Mobile menu -->
-    <div class="nav__mobile" id="navMobile">
-      <a href="#services">Services</a>
-      <a href="#how-it-works">How We Work</a>
-      <a href="#results">Results</a>
-      <a href="#faq">FAQ</a>
-      <a href="https://calendly.com/epselon/enquiry" class="btn btn--primary" style="margin-top: 0.5rem; text-align: center;" target="_blank" rel="noopener">Talk to Us</a>
-    </div>
-  </nav>
+  </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="container hero__container">
-      <div class="hero__badge anim-hero" data-delay="0">Revenue Engineering for B2B Teams</div>
-      <h1 class="hero__title anim-hero" data-delay="1">
-        We build the systems that
-        <span class="hero__title--accent">find your next customers</span>
-      </h1>
-      <p class="hero__sub anim-hero" data-delay="2">
-        Most AI is making marketing worse. We build revenue infrastructure
-        that identifies the right accounts at the right moment &mdash;
-        so your team focuses on closing, not chasing.
-      </p>
-      <!-- VSL: unhide when ready
-      <div class="hero__video anim-hero" data-delay="3" id="vsl-hero">
-        <div class="hero__video-placeholder">
-          <svg viewBox="0 0 64 64" fill="none" width="56" height="56"><circle cx="32" cy="32" r="30" stroke="rgba(0,0,0,0.1)" stroke-width="2"/><polygon points="26,20 26,44 46,32" fill="rgba(0,0,0,0.15)"/></svg>
-          <span>VSL video goes here</span>
-        </div>
-      </div>
-      -->
-      <div class="hero__cta anim-hero" data-delay="4">
-        <a href="https://calendly.com/epselon/enquiry" class="btn btn--primary btn--lg" target="_blank" rel="noopener">Talk to Us</a>
-        <a href="#services" class="btn btn--outline btn--lg">See Our Services</a>
-      </div>
-      <div class="hero__visual anim-hero" data-delay="4">
-        <div class="hero__dashboard">
-          <div class="hero__dashboard-header">
-            <span class="hero__dashboard-dot"></span>
-            <span class="hero__dashboard-dot"></span>
-            <span class="hero__dashboard-dot"></span>
-            <span class="hero__dashboard-label">Signal Monitor</span>
-          </div>
-          <div class="hero__grid">
-            <div class="hero__signal-card">
-              <div class="signal-card__dot signal-card__dot--green"></div>
-              <div class="signal-card__content">
-                <span class="signal-card__label">Signal Detected</span>
-                <span class="signal-card__value">New CTO appointed</span>
-              </div>
-              <span class="signal-card__score">92</span>
-            </div>
-            <div class="hero__signal-card">
-              <div class="signal-card__dot signal-card__dot--blue"></div>
-              <div class="signal-card__content">
-                <span class="signal-card__label">Funding Event</span>
-                <span class="signal-card__value">Series B &middot; $18M</span>
-              </div>
-              <span class="signal-card__score">87</span>
-            </div>
-            <div class="hero__signal-card">
-              <div class="signal-card__dot signal-card__dot--amber"></div>
-              <div class="signal-card__content">
-                <span class="signal-card__label">Tech Stack Change</span>
-                <span class="signal-card__value">Migrating CRM platform</span>
-              </div>
-              <span class="signal-card__score">78</span>
-            </div>
-            <div class="hero__signal-card">
-              <div class="signal-card__dot signal-card__dot--green"></div>
-              <div class="signal-card__content">
-                <span class="signal-card__label">Hiring Surge</span>
-                <span class="signal-card__value">4 SDR roles posted</span>
-              </div>
-              <span class="signal-card__score">85</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main>
 
-  <!-- ===== LOGO BAR ===== -->
-  <section class="logos">
-    <div class="container">
-      <p class="logos__label">Pipeline infrastructure for B2B teams across</p>
-      <div class="logos__track">
-        <div class="logos__row">
-          <span class="logos__item">SaaS</span>
-          <span class="logos__divider">&middot;</span>
-          <span class="logos__item">FinTech</span>
-          <span class="logos__divider">&middot;</span>
-          <span class="logos__item">GovTech</span>
-          <span class="logos__divider">&middot;</span>
-          <span class="logos__item">Cybersecurity</span>
-          <span class="logos__divider">&middot;</span>
-          <span class="logos__item">Professional Services</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SERVICES ===== -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Services</span>
-        <h2 class="section-title">Signal-based pipeline infrastructure.<br>Built and delivered.</h2>
-        <p class="section-sub">
-          Every engagement starts with research and ends with deliverables
-          your team can use. Pick the depth that fits your stage.
-        </p>
-      </div>
-      <div class="services__grid">
-        <div class="services__card">
-          <span class="services__card-tag">Entry Point</span>
-          <h3 class="services__card-title">Signal Report</h3>
-          <p class="services__card-price">Entry-level engagement</p>
-          <p class="services__card-body">
-            Clay-powered sweep identifying accounts showing real buying signals &mdash;
-            leadership changes, hiring surges, tech stack shifts, funding events.
-          </p>
-          <ul class="services__card-deliverables">
-            <li>50+ accounts with verified buying signals</li>
-            <li>Signal-type breakdown and scoring</li>
-            <li>Prioritised target list with research summaries</li>
-          </ul>
-          <a href="#" class="services__card-link">Learn more</a>
-        </div>
-        <div class="services__card">
-          <span class="services__card-tag">Core Project</span>
-          <h3 class="services__card-title">Total Market List Build</h3>
-          <p class="services__card-price">Scoped per engagement</p>
-          <p class="services__card-body">
-            Complete addressable market, researched and scored. Every account qualified
-            against your ICP, enriched with verified contacts, segmented by pain point.
-          </p>
-          <ul class="services__card-deliverables">
-            <li>Full TAM list &mdash; uncapped accounts</li>
-            <li>3-5 verified contacts per account</li>
-            <li>Pain point segment + signal summary per account</li>
-          </ul>
-          <a href="#" class="services__card-link">Learn more</a>
-        </div>
-        <div class="services__card services__card--featured">
-          <span class="services__card-tag">Full Build</span>
-          <h3 class="services__card-title">GTM Infrastructure Build</h3>
-          <p class="services__card-price">Full build &middot; 30 days</p>
-          <p class="services__card-body">
-            End-to-end pipeline system. Signal detection, multi-stage scoring,
-            pain-point segmented copy, campaign infrastructure, and CRM integration.
-            Built and launched in 30 days.
-          </p>
-          <ul class="services__card-deliverables">
-            <li>Signal detection + scoring system</li>
-            <li>Campaign copy across personas and segments</li>
-            <li>Multi-channel campaign infrastructure</li>
-            <li>CRM integration + handoff workflows</li>
-          </ul>
-          <a href="#" class="services__card-link">Learn more</a>
-        </div>
-        <div class="services__card">
-          <span class="services__card-tag">Ongoing</span>
-          <h3 class="services__card-title">Audience Refresh Retainer</h3>
-          <p class="services__card-price">Monthly retainer</p>
-          <p class="services__card-body">
-            Monthly refresh of your ICP account list, audience uploads to ad platforms,
-            suppression updates, and match rate reporting.
-          </p>
-          <ul class="services__card-deliverables">
-            <li>Monthly ICP account list refresh</li>
-            <li>Ad platform audience re-upload</li>
-            <li>Match rate and suppression reporting</li>
-          </ul>
-          <a href="#" class="services__card-link">Learn more</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="how" id="how-it-works">
-    <div class="how__bg-shapes"></div>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag section-tag--light">How We Work</span>
-        <h2 class="section-title section-title--light">Research first. Then build.</h2>
-      </div>
-      <div class="how__flow">
-        <div class="how__timeline-line"></div>
-        <div class="how__step">
-          <div class="how__step-number">01</div>
-          <div class="how__step-content">
-            <h3 class="how__step-title">Research</h3>
-            <p class="how__step-time">Weeks 1-2</p>
-            <p class="how__step-body">
-              Discovery workshop. ICP definition. Pain point segmentation.
-              Signal mapping. Market sizing. The foundation everything else builds on.
-            </p>
-            <ul class="how__step-outputs">
-              <li>ICP Framework</li>
-              <li>Pain Point Segments</li>
-              <li>Signal Map</li>
-              <li>Market Sizing</li>
-            </ul>
+    <!-- Hero -->
+    <section class="eps-hero">
+      <div class="eps-hero__inner">
+        <div class="fade-up">
+          <p class="eps-eyebrow">Epselon Signals</p>
+          <h1 class="eps-heading eps-heading--1">Buying-signal intelligence for the industries the SaaS tools forgot.</h1>
+          <p class="eps-hero__sub">A builder wins a tender. A distributor commits to a new depot up the highway. It all lands on the public record, and almost none of it reaches a sales team in time to act. We watch the record for you and tell your reps which accounts are worth a call this week, with the proof attached.</p>
+          <div class="eps-hero__ctas">
+            <a class="eps-btn eps-btn--lg eps-btn--primary" href="https://signals-demo.epselon.io">See a live demo</a>
+            <a class="eps-btn eps-btn--lg eps-btn--ghost" href="https://calendly.com/epselon/enquiry">Talk to us</a>
           </div>
+          <p class="eps-hero__micro">The demo is the real app with example data. No form, nothing to install.</p>
         </div>
-        <div class="how__connector"><svg viewBox="0 0 24 40" fill="none"><path d="M12 0V40M12 40L4 32M12 40L20 32" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div class="how__step">
-          <div class="how__step-number">02</div>
-          <div class="how__step-content">
-            <h3 class="how__step-title">Targeting</h3>
-            <p class="how__step-time">Weeks 2-4</p>
-            <p class="how__step-body">
-              Signal-based account scoring. Verified contacts enriched per account.
-              Segment mapping across your ICP. CRM-ready exports your team can use immediately.
-            </p>
-            <ul class="how__step-outputs">
-              <li>Scored Account List</li>
-              <li>Verified Contacts</li>
-              <li>Segment Mapping</li>
-              <li>CRM-Ready Export</li>
-            </ul>
-          </div>
-        </div>
-        <div class="how__connector"><svg viewBox="0 0 24 40" fill="none"><path d="M12 0V40M12 40L4 32M12 40L20 32" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div class="how__step">
-          <div class="how__step-number">03</div>
-          <div class="how__step-content">
-            <h3 class="how__step-title">Messaging</h3>
-            <p class="how__step-time">Weeks 3-5</p>
-            <p class="how__step-body">
-              Pain-point segmented copy across personas. A/B variants for every angle.
-              Follow-up sequences calibrated to each segment. Built for multi-channel execution.
-            </p>
-            <ul class="how__step-outputs">
-              <li>Campaign Copy</li>
-              <li>A/B Variants</li>
-              <li>Persona &times; Segment Matrix</li>
-              <li>Follow-up Sequences</li>
-            </ul>
-          </div>
-        </div>
-        <div class="how__connector"><svg viewBox="0 0 24 40" fill="none"><path d="M12 0V40M12 40L4 32M12 40L20 32" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div class="how__step">
-          <div class="how__step-number">04</div>
-          <div class="how__step-content">
-            <h3 class="how__step-title">Enablement</h3>
-            <p class="how__step-time">Weeks 4-16</p>
-            <p class="how__step-body">
-              Campaigns live. Pipeline reporting. Continuous optimisation based
-              on real response data. Handoff workflows so your team closes, not chases.
-            </p>
-            <ul class="how__step-outputs">
-              <li>Live Campaigns</li>
-              <li>Pipeline Reporting</li>
-              <li>Continuous Optimisation</li>
-              <li>Handoff Workflows</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== RESULTS / TESTIMONIALS ===== -->
-  <section class="results" id="results">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Results</span>
-        <h2 class="section-title">What our customers are saying</h2>
-      </div>
-      <div class="testimonials__featured">
-        <div class="testimonials__card testimonials__card--hero">
-          <div class="testimonials__card-inner">
-            <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
-            <blockquote class="testimonials__text testimonials__text--lg">
-              Over the past year, we've gained about five repeat business customers, which I'm very happy with. Our return on investment is <strong class="testimonials__highlight">8.2X against spend.</strong> This isn't just one-off wins; it's compounding growth. If we add another six clients next year, it just keeps scaling.
-            </blockquote>
-            <div class="testimonials__author">
-              <div class="testimonials__author-avatar">SD</div>
-              <div class="testimonials__author-info">
-                <span class="testimonials__name">Shaun Deacon</span>
-                <span class="testimonials__role">Managing Director at White Bay</span>
-              </div>
+        <div class="eps-feedmock fade-up" aria-hidden="true">
+          <span class="eps-feedmock__label">Your feed &middot; example data</span>
+          <div class="eps-signal">
+            <div class="eps-signal__top">
+              <span class="eps-signal__type">Tender award</span>
+              <span class="eps-signal__when">Tue 7:00am</span>
             </div>
+            <p class="eps-signal__what">Contractor wins $34M road upgrade, Hunter region</p>
+            <p class="eps-signal__src">AusTender contract notice &middot; supply packages open</p>
           </div>
-          <div class="testimonials__metric">
-            <span class="testimonials__metric-number">8.2x</span>
-            <span class="testimonials__metric-label">Return on<br>investment</span>
-          </div>
-        </div>
-      </div>
-      <div class="testimonials__grid testimonials__grid--three">
-        <div class="testimonials__card">
-          <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
-          <blockquote class="testimonials__text">
-            The operational improvements from Epselon's work have already had a noticeable impact. Their team not only provided both operational understanding and technical expertise, but also took the time to understand our business. They possessed a deep understanding of our needs and deliver efficient, tailored solutions. I would highly recommend working with Epselon.
-          </blockquote>
-          <div class="testimonials__author">
-            <div class="testimonials__author-avatar">JH</div>
-            <div class="testimonials__author-info">
-              <span class="testimonials__name">Jasmine Hikuroa</span>
-              <span class="testimonials__role">Corporate Account Manager at H&amp;L</span>
+          <div class="eps-signal">
+            <div class="eps-signal__top">
+              <span class="eps-signal__type">Development approval</span>
+              <span class="eps-signal__when">Mon 7:00am</span>
             </div>
+            <p class="eps-signal__what">$120M industrial estate approved, western corridor</p>
+            <p class="eps-signal__src">State planning register &middot; construction from Q3</p>
           </div>
-        </div>
-        <div class="testimonials__card">
-          <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
-          <blockquote class="testimonials__text">
-            Working with Epselon has been transformative. Their hyper-personalized strategy helped us reach qualified prospects within our ideal customer profile. The sophistication and precision were unparalleled, elevating our prospecting efforts to new heights compared to previous campaigns.
-          </blockquote>
-          <div class="testimonials__author">
-            <div class="testimonials__author-avatar">SC</div>
-            <div class="testimonials__author-info">
-              <span class="testimonials__name">Simon Chin</span>
-              <span class="testimonials__role">CEO at Flowstate</span>
+          <div class="eps-signal">
+            <div class="eps-signal__top">
+              <span class="eps-signal__type">BD hiring</span>
+              <span class="eps-signal__when">Fri 7:00am</span>
             </div>
-          </div>
-        </div>
-        <div class="testimonials__card">
-          <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
-          <blockquote class="testimonials__text">
-            If you're hesitant about outreach, give Epselon a try. They understand agencies, fine-tune messaging for your audience, and deliver results. The investment is small compared to the upside &mdash; consistent, high-quality leads that fuel long-term business growth.
-          </blockquote>
-          <div class="testimonials__author">
-            <div class="testimonials__author-avatar">EW</div>
-            <div class="testimonials__author-info">
-              <span class="testimonials__name">Ed Womersley</span>
-              <span class="testimonials__role">Director &amp; Founder at Hustle</span>
-            </div>
+            <p class="eps-signal__what">Regional builder advertising two estimator roles</p>
+            <p class="eps-signal__src">Seek listing &middot; gearing up for new work</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">FAQ</span>
-        <h2 class="section-title">Common questions</h2>
-      </div>
-      <div class="faq__list">
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>We already have an outbound agency / SDR team doing this.</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>That's actually the ideal starting point. We're not replacing your team or agency &mdash; we're building the targeting and research infrastructure that makes them more effective. Most outbound teams work lists built on firmographics. We add the signal layer that tells them which accounts to prioritise right now. Your team still does the selling. They just spend time on accounts in an active buying window.</p>
+    <!-- The gap -->
+    <section class="eps-section eps-section--surface">
+      <div class="eps-wrap">
+        <div class="eps-section__head fade-up">
+          <p class="eps-eyebrow">The gap</p>
+          <h2 class="eps-heading eps-heading--2">Every sales-intelligence tool was built for tech. Your industry got nothing.</h2>
+          <p class="eps-lead">ZoomInfo, Bombora, Cognism, Apollo. The whole category grew up serving software companies, because software buyers were the easiest to track. If you supply builders, distribute industrial gear, move freight or broker commercial cover, none of those tools watch the places your buying signals actually appear.</p>
+        </div>
+        <div class="eps-grid eps-grid--3">
+          <div class="eps-card fade-up">
+            <h3 class="eps-feature__title">The tools skip your market</h3>
+            <p class="eps-feature__body">Type "tender win" or "new depot" into a SaaS intent tool and you get nothing. Those signals live in tender portals, planning registers and trade press the tools never index.</p>
+          </div>
+          <div class="eps-card fade-up">
+            <h3 class="eps-feature__title">Reps run on a stale list</h3>
+            <p class="eps-feature__body">The account list was right eighteen months ago. Since then projects have finished, contacts have moved on and new players have won work. Nobody has time to rebuild it, so the same names keep getting the same call.</p>
+          </div>
+          <div class="eps-card fade-up">
+            <h3 class="eps-feature__title">You hear about the deal too late</h3>
+            <p class="eps-feature__body">By the time a won job travels by word of mouth, the early packages are locked in. The supplier who calls first sells on timing. Everyone after them quotes on price.</p>
           </div>
         </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>We tried outbound and it didn't work for us.</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>When most companies say outbound didn't work, what they mean is volume-based outreach didn't work. And they're right &mdash; that approach is broken for considered-purchase B2B. What we build is fundamentally different. We start with signal detection and pain point segmentation before a single message gets sent. The diagnostic answers whether our methodology fits your market in two weeks &mdash; with real data, not theory.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>Can't we just set up Clay / Apollo ourselves?</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>You can, and some of our clients started there. The challenge isn't the tool &mdash; it's the methodology. Clay is a data enrichment platform. It doesn't tell you which accounts to target, how to score them, what signals matter for your market, or how to segment by pain point. We use Clay as one layer in a larger system. The value isn't in configuring a tool &mdash; it's in the research, scoring, and segmentation logic that drives it.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>What services do you offer?</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>We offer four core services: Signal Reports, Total Market List Builds, full GTM Infrastructure Builds, and ongoing Audience Refresh Retainers. Every engagement starts with research and ends with deliverables your team can use. We scope and price everything on an intro call.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>Can you guarantee meetings or leads?</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>We don't guarantee meeting numbers because that incentivises the wrong behaviour. Agencies guaranteeing 20 meetings a month spam 50,000 people to hit their number &mdash; you end up with unqualified conversations and a burnt domain. Campaigns typically produce qualified responses within 4-6 weeks of launch. But if you need leads by next Friday, we're not the right fit.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>How is this different from a lead gen agency?</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>Lead gen agencies sell volume. They're optimising for meetings booked, which means bigger lists and more touches. We're a revenue engineering firm &mdash; we build the infrastructure that identifies which accounts matter and why. The difference shows up in meeting quality, response rates, and pipeline that actually converts.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>What industries do you work with?</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>B2B companies with considered purchase cycles and deal sizes above $50k AUD. We've built systems across SaaS, FinTech, GovTech, cybersecurity, and professional services. The methodology is industry-agnostic &mdash; the diagnostic adapts it to your specific market.</p>
-          </div>
+        <div class="eps-card eps-card--accent fade-up" style="margin-top: 18px;">
+          <p style="margin: 0; font-size: var(--eps-text-lg); font-weight: 500;">The signal already exists in public. It just never reaches your reps in time. That's the gap we close.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== FOOTER CTA ===== -->
-  <section class="footer-cta">
-    <div class="footer-cta__bg-glow"></div>
-    <div class="container">
-      <h2 class="footer-cta__title">Better accounts. Better timing.<br>Better pipeline.</h2>
-      <p class="footer-cta__sub">
-        We build the signal-based targeting infrastructure that turns market data
-        into qualified meetings.
-      </p>
-      <a href="https://calendly.com/epselon/enquiry" class="btn btn--white btn--lg" target="_blank" rel="noopener">Talk to Us</a>
-    </div>
-  </section>
+    <!-- What you get -->
+    <section class="eps-section eps-section--dark" id="product">
+      <div class="eps-wrap">
+        <div class="eps-section__head fade-up">
+          <p class="eps-eyebrow eps-eyebrow--inverse">The product</p>
+          <h2 class="eps-heading eps-heading--2 eps-heading--inverse">A signals app in your brand, built for a rep to scan in a minute.</h2>
+          <p class="eps-lead">Your team gets a web app in your colours, behind a login only your staff can use. Open it on a Monday and it answers one question: who in our market is worth a call this week?</p>
+        </div>
+        <div class="eps-grid eps-grid--2">
+          <div class="eps-card eps-card--dark fade-up" style="background: var(--eps-ink-raised);">
+            <h3 class="eps-feature__title">The feed</h3>
+            <p class="eps-feature__body">Every new signal in your market, newest first. What happened, when it happened, and the link that proves it.</p>
+          </div>
+          <div class="eps-card eps-card--dark fade-up" style="background: var(--eps-ink-raised);">
+            <h3 class="eps-feature__title">Accounts</h3>
+            <p class="eps-feature__body">Each company you care about, with its full signal history and a score for how ready it looks right now.</p>
+          </div>
+          <div class="eps-card eps-card--dark fade-up" style="background: var(--eps-ink-raised);">
+            <h3 class="eps-feature__title">The people</h3>
+            <p class="eps-feature__body">The decision makers at each signal account, named and mapped to roles, so the rep knows who to ring rather than guessing at a switchboard.</p>
+          </div>
+          <div class="eps-card eps-card--dark fade-up" style="background: var(--eps-ink-raised);">
+            <h3 class="eps-feature__title">Routing</h3>
+            <p class="eps-feature__body">New signals push into your CRM, inbox or Slack. Intelligence that sits in a dashboard doesn't get used, so we put it where your team already works.</p>
+          </div>
+        </div>
+        <p class="fade-up" style="margin: 32px 0 0; color: var(--eps-on-dark-muted);">Want to click around it? <a href="https://signals-demo.epselon.io" style="color: var(--eps-accent-soft);">The demo is live</a>, loaded with example data.</p>
+      </div>
+    </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer__gradient-line"></div>
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__brand">
-          <a href="#" class="nav__logo">
-            <img src="logo-header.png" alt="Epselon" class="nav__logo-img nav__logo-img--light">
+    <!-- How it works -->
+    <section class="eps-section" id="how-it-works">
+      <div class="eps-wrap">
+        <div class="eps-section__head fade-up">
+          <p class="eps-eyebrow">How it works</p>
+          <h2 class="eps-heading eps-heading--2">From a public record to your rep's task list.</h2>
+        </div>
+        <div class="eps-grid eps-grid--3">
+          <div class="eps-card eps-card--surface fade-up">
+            <span class="eps-step__num">1</span>
+            <h3 class="eps-feature__title">We read the record</h3>
+            <p class="eps-feature__body">Every week we sweep tender portals, planning registers, ASX announcements, job boards and trade press across your territory. On top of that standard watch, we find and prove sources specific to your patch. Those are usually where the best signals hide.</p>
+          </div>
+          <div class="eps-card eps-card--surface fade-up">
+            <span class="eps-step__num">2</span>
+            <h3 class="eps-feature__title">We verify every signal</h3>
+            <p class="eps-feature__body">Each one carries a named company, a date and a link to the record it came from, so your reps can check it themselves before picking up the phone. When a signal can't be verified, we drop it. You get eight real signals before you ever get ten padded ones.</p>
+          </div>
+          <div class="eps-card eps-card--surface fade-up">
+            <span class="eps-step__num">3</span>
+            <h3 class="eps-feature__title">It reaches your reps where they work</h3>
+            <p class="eps-feature__body">The app is the home base. The push into your CRM or inbox is what makes it turn into calls.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How you start -->
+    <section class="eps-section eps-section--surface">
+      <div class="eps-wrap">
+        <div class="eps-section__head fade-up">
+          <p class="eps-eyebrow">How you start</p>
+          <h2 class="eps-heading eps-heading--2">Prove it on your own patch before you commit to anything.</h2>
+        </div>
+        <div class="eps-grid eps-grid--3">
+          <div class="eps-card fade-up">
+            <span class="eps-pill eps-pill--soft">Step 1</span>
+            <h3 class="eps-feature__title" style="margin-top: 14px;">See your market</h3>
+            <p class="eps-feature__body">We run a real pull on your territory and put live, checkable signals in front of you. Not a slide about what we would find. The actual accounts, this month.</p>
+          </div>
+          <div class="eps-card eps-card--accent fade-up">
+            <span class="eps-pill" style="background: rgba(255,255,255,0.18); color: #fff;">Step 2</span>
+            <h3 class="eps-feature__title" style="margin-top: 14px;">The build</h3>
+            <p class="eps-feature__body">Your branded app over your market: the weekly watch, account scoring, routing into your tools. Fixed scope, built in weeks.</p>
+          </div>
+          <div class="eps-card fade-up">
+            <span class="eps-pill eps-pill--soft">Step 3</span>
+            <h3 class="eps-feature__title" style="margin-top: 14px;">Operate</h3>
+            <p class="eps-feature__body">Markets move every week, so the system has to keep up. We keep the feed fresh, tune what gets flagged based on what your team actually wins, and report back on which signals turned into quotes and orders.</p>
+          </div>
+        </div>
+        <p class="fade-up" style="margin: 24px 0 0; color: var(--eps-fg-muted); font-size: var(--eps-text-sm);">Builds are fixed-scope and priced on a call, once we know your market and territory. You see your own signals before you commit to anything bigger.</p>
+      </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="eps-section" id="industries">
+      <div class="eps-wrap">
+        <div class="eps-section__head fade-up">
+          <p class="eps-eyebrow">Industries</p>
+          <h2 class="eps-heading eps-heading--2">Where we work.</h2>
+        </div>
+        <div class="eps-grid eps-grid--2">
+          <a class="eps-card fade-up" href="/construction/" style="text-decoration: none;">
+            <span class="eps-pill eps-pill--accent">Live</span>
+            <h3 class="eps-feature__title" style="margin-top: 14px;">Construction and mining supply &rarr;</h3>
+            <p class="eps-feature__body">Tenders, development approvals and project go-aheads make this the richest public signal trail in the country. Our home ground.</p>
           </a>
-          <p class="footer__tagline">Revenue engineering infrastructure for B2B sales teams.</p>
-        </div>
-        <div class="footer__links">
-          <div class="footer__col">
-            <h4>Company</h4>
-            <a href="#services">Services</a>
-            <a href="#how-it-works">How We Work</a>
-            <a href="#results">Results</a>
-            <a href="#faq">FAQ</a>
+          <div class="eps-card fade-up">
+            <span class="eps-pill eps-pill--outline">Opening</span>
+            <h3 class="eps-feature__title" style="margin-top: 14px;">Industrial distribution</h3>
+            <p class="eps-feature__body">Your customers' capex is your leading indicator. New sites, fleet spending and contract wins across their market, read weekly.</p>
           </div>
-          <div class="footer__col">
-            <h4>Connect</h4>
-            <a href="https://linkedin.com/company/epselonio" target="_blank" rel="noopener">LinkedIn</a>
+          <div class="eps-card fade-up">
+            <span class="eps-pill eps-pill--outline">Opening</span>
+            <h3 class="eps-feature__title" style="margin-top: 14px;">Logistics and transport</h3>
+            <p class="eps-feature__body">Contracted freight moves ahead of the market. Watch who is winning the work that needs moving.</p>
+          </div>
+          <div class="eps-card fade-up">
+            <span class="eps-pill eps-pill--outline">Opening</span>
+            <h3 class="eps-feature__title" style="margin-top: 14px;">Commercial insurance and B2B finance</h3>
+            <p class="eps-feature__body">New assets, new ventures and expansions all create cover and finance needs, and most of them are announced.</p>
+          </div>
+        </div>
+        <p class="fade-up" style="margin: 24px 0 0; color: var(--eps-fg-muted);">If your industry is not here, ask. The method carries; the sources change.</p>
+      </div>
+    </section>
+
+    <!-- Proof -->
+    <section class="eps-section eps-section--dark">
+      <div class="eps-wrap">
+        <div class="eps-section__head fade-up">
+          <p class="eps-eyebrow eps-eyebrow--inverse">Results</p>
+          <h2 class="eps-heading eps-heading--2 eps-heading--inverse">What clients say.</h2>
+        </div>
+        <div class="eps-grid eps-grid--2">
+          <div class="eps-card eps-card--dark eps-quote fade-up" style="background: var(--eps-ink-raised);">
+            <p class="eps-quote__text" style="color: var(--eps-on-dark);">"Over the past year, we've gained about five repeat business customers, which I'm very happy with. Our return on investment is 8.2X against spend. This isn't just one-off wins; it's compounding growth. If we add another six clients next year, it just keeps scaling."</p>
+            <p class="eps-quote__who">Shaun Deacon &middot; Managing Director, White Bay</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 18px;">
+            <div class="eps-card eps-card--accent fade-up" style="flex: 0 0 auto;">
+              <div class="eps-stat">8.2x</div>
+              <div class="eps-stat__label" style="color: rgba(255,255,255,0.85);">return on investment, White Bay</div>
+            </div>
+            <div class="eps-card eps-card--dark eps-quote fade-up" style="background: var(--eps-ink-raised); flex: 1;">
+              <p class="eps-quote__text" style="font-size: var(--eps-text-base); font-weight: 400; color: var(--eps-on-dark-muted);">"The operational improvements from Epselon's work have already had a noticeable impact. Their team not only provided both operational understanding and technical expertise, but also took the time to understand our business."</p>
+              <p class="eps-quote__who">Jasmine Hikuroa &middot; Corporate Account Manager, H&amp;L</p>
+            </div>
+          </div>
+        </div>
+        <p class="fade-up" style="margin: 28px 0 0; color: var(--eps-on-dark-muted); max-width: 56em;">Both are Epselon client engagements. Signals is the same discipline, watching a market and handing the timing to the sales team, packaged as a product you keep.</p>
+      </div>
+    </section>
+
+    <!-- Founder strip -->
+    <section class="eps-section eps-section--tight">
+      <div class="eps-wrap--narrow fade-up">
+        <div class="eps-card eps-card--surface" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+          <p style="margin: 0; color: var(--eps-fg-muted);">Epselon is run from Melbourne by Alex Bennett. He scopes every build and reads every reply. If you email, he answers.</p>
+          <a class="eps-btn eps-btn--md eps-btn--ghost" href="https://www.linkedin.com/company/epselonio" style="margin-left: auto;">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="eps-section eps-section--surface" id="faq">
+      <div class="eps-wrap--narrow">
+        <div class="eps-section__head fade-up">
+          <p class="eps-eyebrow">FAQ</p>
+          <h2 class="eps-heading eps-heading--2">Straight answers.</h2>
+        </div>
+        <div class="eps-faq fade-up">
+          <details>
+            <summary>Where do the signals come from?</summary>
+            <p>Public and licensed sources. Tender portals, council and state planning registers, ASX announcements, job boards and trade press, plus sources specific to your market that we find and prove during the build. Every signal links to where it came from.</p>
+          </details>
+          <details>
+            <summary>How do I know the signals are real?</summary>
+            <p>Each one carries a named company, a date and a link to the public record. Check any of them yourself. When something can't be verified, we drop it rather than pad your feed.</p>
+          </details>
+          <details>
+            <summary>What does the demo show?</summary>
+            <p>The full app, loaded with example data for a fictional supplier. What you would buy is the same app pointed at your market, in your brand, behind your login.</p>
+          </details>
+          <details>
+            <summary>We already have an SDR team or an agency doing outbound.</summary>
+            <p>Good. That's the ideal starting point, and we're not replacing them. Most outbound teams work lists built on firmographics. We add the timing layer that tells them which accounts to work this week. Your team still does the selling.</p>
+          </details>
+          <details>
+            <summary>Is our data safe?</summary>
+            <p>Your feed is yours alone. Every client runs on a dedicated database, logins are restricted to your company's email domains, and nothing about your market watch is shared. We ship an ISO 27001 control mapping with every build. That is a mapping against the standard, not a certification, and we'll walk you through exactly what it covers.</p>
+          </details>
+          <details>
+            <summary>What does it cost?</summary>
+            <p>Builds are fixed-scope and priced on a call, because the price depends on your territory, the sources involved and how many teams use it. The way in is cheap: we show you your own market first, then you decide.</p>
+          </details>
+          <details>
+            <summary>What happens on the call?</summary>
+            <p>Twenty minutes. You tell us what you sell, who buys it and the patch you cover. We tell you which signals are actually trackable for your market. Sometimes the honest answer is "few", and we'll say so.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="eps-section">
+      <div class="eps-wrap--narrow fade-up">
+        <div class="eps-card eps-card--dark eps-card--xl" style="text-align: center; padding: 56px 32px;">
+          <h2 class="eps-heading eps-heading--2 eps-heading--inverse">See what's moving in your market right now.</h2>
+          <p class="eps-lead" style="margin: 16px auto 30px; max-width: 36em;">Have a look at the demo first. When it clicks, book a call and we'll talk about what a watch on your patch would look like.</p>
+          <div class="eps-hero__ctas" style="justify-content: center;">
+            <a class="eps-btn eps-btn--lg eps-btn--primary" href="https://signals-demo.epselon.io">See a live demo</a>
+            <a class="eps-btn eps-btn--lg eps-btn--ondark" href="https://calendly.com/epselon/enquiry">Talk to us</a>
           </div>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p>&copy; 2026 Epselon.</p>
+    </section>
+
+  </main>
+
+  <footer class="eps-footer">
+    <div class="eps-footer__inner">
+      <div class="eps-footer__top">
+        <img src="/assets/epselon-logo-white.png" alt="epselon">
+        <div class="eps-footer__links">
+          <a href="#product">Product</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#industries">Industries</a>
+          <a href="/services/">Services</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="eps-footer__base">
+        <span>&copy; 2026 Epselon, Melbourne</span>
+        <span>
+          <a href="https://www.linkedin.com/company/epselonio">LinkedIn</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://epselon.ai">Automation systems: epselon.ai</a>
+        </span>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/js/site.js" defer></script>
 </body>
 </html>
