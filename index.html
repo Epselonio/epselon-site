@@ -1,498 +1,749 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Epselon | Revenue Engineering for B2B Teams</title>
-  <meta name="description" content="Epselon builds signal-based pipeline infrastructure for B2B sales teams. Signal Reports, Total Market List Builds, GTM Infrastructure, and Audience Refresh Retainers.">
-  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="favicon-180.png">
-  <link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Wistia: uncomment and replace VIDEO_ID when ready
-  <script src="https://fast.wistia.com/embed/medias/VIDEO_ID.jsonp" async></script>
-  <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epselon Signals | Buying-signal intelligence for construction, industrial, logistics and B2B finance</title>
+<meta name="description" content="We watch the public record and tell your sales team which accounts in their market are about to buy, with the proof attached. Built for the industries the SaaS tools forgot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azure:#0a6cff; --azure-hover:#0a5be0; --azure-tint:#e7f0ff;
+  --paper:#ffffff; --ink:#141414; --ink-raised:#2a2a2a; --black:#0b0b0b;
+  --surface:#f1f1f1; --muted:#5c5c5c; --muted-dark:#b4b4b4;
+  --hl:rgba(20,20,20,0.10); --hl-d:rgba(255,255,255,0.14);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:"Inter",sans-serif;font-size:16px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{font-family:"Inter Tight",sans-serif;font-weight:600;}
+
+/* ---------- frame + grid ---------- */
+.inner{max-width:1200px;margin-inline:auto;padding-inline:32px;border-inline:1px solid var(--hl);}
+.band--dark .inner{border-inline-color:var(--hl-d);}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;}
+
+/* ---------- label tier ---------- */
+.lbl{font-family:"Inter",sans-serif;font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;}
+.tnum{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;}
+
+/* ---------- ledger row ---------- */
+.ledger{display:flex;align-items:center;gap:16px;height:48px;border-bottom:1px solid var(--hl);}
+.band--dark .ledger{border-bottom-color:var(--hl-d);}
+.ledger-ix{font-family:"Inter",sans-serif;font-weight:500;font-size:13px;letter-spacing:0.08em;font-feature-settings:"tnum" 1,"zero" 1;color:var(--muted);}
+.band--dark .ledger-ix{color:var(--muted-dark);}
+.ledger-eb{font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);}
+.band--dark .ledger-eb{color:var(--paper);}
+
+/* ---------- type ---------- */
+.h2{font-size:46px;line-height:1.08;letter-spacing:-0.02em;color:var(--ink);}
+.band--dark .h2{color:var(--paper);}
+.lead{font-size:19px;line-height:1.55;color:var(--ink-raised);}
+.band--dark .lead{color:var(--muted-dark);}
+.body{font-size:16px;line-height:1.6;color:var(--muted);}
+.band--dark .body{color:var(--muted-dark);}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:6px;font-family:"Inter",sans-serif;font-weight:500;font-size:15px;cursor:pointer;transition:background 0.2s ease,border-color 0.2s ease;white-space:nowrap;}
+.btn--primary{background:var(--azure);color:var(--paper);border:none;}
+.btn--primary:hover{background:var(--azure-hover);}
+.btn--secondary{background:transparent;color:var(--ink);border:1px solid var(--hl);}
+.btn--secondary:hover{border-color:rgba(20,20,20,0.30);}
+.btn--secondary.on-dark{color:var(--paper);border-color:var(--hl-d);}
+.btn--secondary.on-dark:hover{border-color:rgba(255,255,255,0.40);}
+.btn--nav{height:40px;}
+
+/* ---------- scaleX underline device ---------- */
+.ul{position:relative;}
+.ul::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--azure);transform:scaleX(0);transform-origin:right;transition:transform 0.25s cubic-bezier(.25,0,0,1);}
+.ul:hover::after,a:hover>.ul::after{transform:scaleX(1);transform-origin:left;}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:100;height:68px;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--hl);}
+.nav-inner{max-width:1200px;margin-inline:auto;padding-inline:32px;height:68px;display:flex;align-items:center;}
+.nav-logo img{height:17px;width:auto;}
+.nav-links{display:flex;gap:28px;margin-left:32px;list-style:none;}
+.nav-links a{font-weight:500;font-size:14px;color:var(--ink-raised);}
+.nav-cta{margin-left:auto;display:flex;gap:12px;align-items:center;}
+.menu-btn{display:none;background:none;border:none;font-family:"Inter",sans-serif;font-weight:500;font-size:14px;color:var(--ink);cursor:pointer;margin-left:auto;}
+.menu-panel{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--hl);}
+.menu-panel.open{display:block;}
+.menu-panel a{display:flex;align-items:center;height:56px;padding-inline:20px;font-weight:500;font-size:15px;color:var(--ink);border-bottom:1px solid var(--hl);}
+.menu-panel a:last-child{border-bottom:none;}
+
+/* ---------- hero ---------- */
+.hero .inner{padding-top:88px;padding-bottom:96px;border-bottom:1px solid var(--hl);}
+.hero-copy{grid-column:1/span 6;}
+.hero-art{grid-column:7/span 6;align-self:start;}
+.hero-eb{font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+.hero h1{margin-top:20px;font-size:clamp(44px,6.2vw,76px);line-height:1.02;letter-spacing:-0.03em;color:var(--ink);max-width:15ch;}
+.hero-sub{margin-top:28px;max-width:52ch;}
+.hero-ctas{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap;}
+.hero-micro{margin-top:16px;font-size:13.5px;color:var(--muted);}
+@keyframes focusIn{from{opacity:0;filter:blur(1.5px);}to{opacity:1;filter:blur(0);}}
+.hero-copy{animation:focusIn 0.5s ease-out both;}
+.hero-art{animation:focusIn 0.5s ease-out 0.12s both;}
+
+/* ---------- product panels (feed + accounts) ---------- */
+.panel{border:1px solid var(--hl);border-radius:6px;background:var(--paper);box-shadow:0 16px 32px rgba(20,20,20,0.08);overflow:hidden;}
+.panel-head{display:flex;align-items:center;justify-content:space-between;height:44px;padding-inline:16px;border-bottom:1px solid var(--hl);}
+.panel-head .lt{font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+.panel-head .rt{font-weight:500;font-size:12px;color:var(--muted);}
+.feed-row{position:relative;padding:14px 16px 14px 34px;border-bottom:1px solid var(--hl);}
+.feed-row:last-of-type{border-bottom:none;}
+.dot{position:absolute;left:16px;top:19px;width:6px;height:6px;border-radius:50%;background:var(--azure);}
+.dot--read{background:transparent;border:1px solid var(--hl);}
+.fr-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+.fr-type{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.fr-date{font-weight:500;font-size:10px;color:var(--muted);}
+.fr-name{margin-top:5px;font-family:"Inter Tight",sans-serif;font-weight:600;font-size:16px;line-height:1.3;color:var(--ink);}
+.fr-desc{margin-top:3px;font-size:12.5px;line-height:1.5;color:var(--muted);}
+.fr-src{margin-top:7px;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.fr-src .ul::after{bottom:-1px;}
+.fr-why{margin-top:10px;background:var(--azure-tint);border-radius:6px;padding:8px 10px;font-size:11.5px;line-height:1.5;color:var(--ink-raised);}
+.fr-why .wl{font-weight:600;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;margin-right:6px;color:var(--ink-raised);}
+.feed-row--compact{display:flex;align-items:center;gap:12px;}
+.frc-main{min-width:0;}
+.frc-type{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.frc-name{margin-top:2px;font-family:"Inter Tight",sans-serif;font-weight:600;font-size:14px;color:var(--ink);}
+.frc-score{margin-left:auto;font-family:"Inter Tight",sans-serif;font-weight:600;font-size:14px;color:var(--ink);}
+.panel-foot{display:flex;align-items:center;height:36px;padding-inline:16px;border-top:1px solid var(--hl);font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.pf-ex{margin-left:auto;color:var(--muted);opacity:0.7;white-space:nowrap;}
+
+/* ---------- section shells ---------- */
+.sec .inner{padding-block:112px;}
+.band--dark{background:var(--ink);}
+.band--surface{background:var(--surface);}
+.sec-h2{margin-top:40px;grid-column:1/span 8;}
+.sec-lead{margin-top:24px;grid-column:1/span 7;}
+
+/* ---------- 01 the gap ---------- */
+.gap-rows{margin-top:72px;}
+.gap-row{border-top:1px solid var(--hl-d);padding-block:36px;}
+.gap-row:last-child{border-bottom:1px solid var(--hl-d);}
+.gap-num{grid-column:1/span 2;font-family:"Inter",sans-serif;font-weight:500;font-size:13px;letter-spacing:0.08em;line-height:1.4;font-feature-settings:"tnum" 1,"zero" 1;color:var(--muted-dark);padding-top:7px;}
+.gap-title{grid-column:3/span 4;font-size:24px;line-height:1.2;color:var(--paper);}
+.gap-body{grid-column:7/span 6;}
+.gap-callout{margin-top:64px;grid-column:3/span 8;font-family:"Inter Tight",sans-serif;font-weight:500;font-size:28px;line-height:1.3;letter-spacing:-0.015em;color:var(--paper);border-left:2px solid var(--paper);padding-left:24px;}
+
+/* ---------- 02 the product ---------- */
+.prod-split{margin-top:72px;align-items:start;}
+.feat-list{grid-column:1/span 5;}
+.feat{border-top:1px solid var(--hl);padding-block:28px;}
+.feat:last-child{border-bottom:1px solid var(--hl);}
+.feat-ix{display:flex;align-items:center;gap:10px;font-weight:600;font-size:12px;letter-spacing:0.14em;color:var(--muted);}
+.feat-ix::before{content:"";width:24px;height:1px;background:var(--hl);flex:none;}
+.feat h3{margin-top:8px;font-size:22px;line-height:1.25;letter-spacing:-0.01em;color:var(--ink);}
+.feat p{margin-top:8px;}
+.acct-panel-wrap{grid-column:6/span 7;position:sticky;top:100px;}
+.acct-head{display:grid;grid-template-columns:1fr 1fr 60px;gap:12px;align-items:center;height:40px;padding-inline:16px;border-bottom:1px solid var(--hl);}
+.acct-head span{font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+.acct-head span:last-child{text-align:right;}
+.acct-row{display:grid;grid-template-columns:1fr 1fr 60px;gap:12px;align-items:center;padding:13px 16px;border-bottom:1px solid var(--hl);}
+.acct-row:last-child{border-bottom:none;}
+.acct-row+.panel-foot{border-top:none;}
+.acct-name{font-weight:500;font-size:13px;color:var(--ink);}
+.acct-sig{font-size:12px;color:var(--muted);}
+.acct-score{text-align:right;font-family:"Inter Tight",sans-serif;font-weight:600;font-size:14px;color:var(--ink);}
+
+/* ---------- 03 how it works ---------- */
+.rail{margin-top:64px;position:relative;display:grid;grid-template-columns:repeat(3,1fr);column-gap:24px;}
+.rail::before{content:"";position:absolute;left:0;right:0;top:32px;height:1px;background:var(--hl);}
+.step{position:relative;}
+.step::before{content:"";position:absolute;left:0;top:32px;width:3px;height:24px;background:var(--azure);}
+.step-num{font-family:"Inter Tight",sans-serif;font-weight:600;font-size:15px;line-height:20px;color:var(--ink);}
+.step h3{margin-top:32px;font-size:22px;line-height:1.25;letter-spacing:-0.01em;color:var(--ink);padding-top:20px;}
+.step p{margin-top:12px;}
+.step p strong{font-weight:600;color:var(--ink);}
+
+/* ---------- 04 how you start ---------- */
+.start .inner{padding-block:128px;}
+.start-h2{grid-column:1/span 9;}
+.start-rows{margin-top:80px;display:flex;flex-direction:column;gap:96px;}
+.start-num{grid-column:1/span 3;font-family:"Inter Tight",sans-serif;font-weight:600;font-size:clamp(72px,9vw,120px);line-height:0.95;letter-spacing:-0.03em;color:var(--surface);}
+@supports ((-webkit-text-stroke:1px black)){
+  .start-num{-webkit-text-stroke:1px var(--hl);}
+}
+.start-txt{grid-column:4/span 7;}
+.start-txt h3{font-size:22px;line-height:1.25;letter-spacing:-0.01em;color:var(--ink);}
+.start-txt p{margin-top:12px;font-size:17px;line-height:1.6;color:var(--muted);max-width:46ch;}
+.start-note-rule{margin-top:72px;grid-column:4/span 3;height:1px;background:var(--hl);}
+.start-note{margin-top:24px;grid-column:4/span 7;font-size:14px;color:var(--muted);}
+
+/* ---------- 05 industries ---------- */
+#industries .inner,#results .inner{border-top:1px solid var(--hl);}
+.ind-h2{grid-column:1/span 6;}
+.ind-table{margin-top:56px;border-top:1px solid var(--hl);border-bottom:1px solid var(--hl);}
+.ind-row{padding-block:32px;border-bottom:1px solid var(--hl);align-items:baseline;}
+.ind-row:last-child{border-bottom:none;}
+a.ind-row{display:grid;}
+.ind-status{grid-column:1/span 2;}
+.tag{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--hl);border-radius:6px;padding:4px 10px;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;}
+.tag--live{color:var(--azure);}
+.tag--live .tdot{width:6px;height:6px;border-radius:50%;background:var(--azure);}
+.tag--open{color:var(--muted);}
+.ind-name{grid-column:3/span 5;font-size:26px;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);display:flex;align-items:baseline;gap:10px;}
+.ind-name .arrow{opacity:0;transition:opacity 0.2s ease;color:var(--azure);flex:none;align-self:center;}
+a.ind-row:hover .arrow{opacity:1;}
+a.ind-row:hover .ul::after{transform:scaleX(1);transform-origin:left;}
+.ind-desc{grid-column:8/span 5;font-size:15px;line-height:1.55;color:var(--muted);}
+.ind-note{margin-top:40px;grid-column:3/span 8;font-size:14px;color:var(--muted);}
+
+/* ---------- 06 results ---------- */
+.res-h2{grid-column:1/span 6;}
+.res-split{margin-top:64px;align-items:start;}
+.stat-block{grid-column:1/span 4;}
+.stat-num{font-family:"Inter Tight",sans-serif;font-weight:600;font-size:clamp(96px,11vw,160px);line-height:0.95;letter-spacing:-0.03em;color:var(--azure);}
+.stat-lbl{margin-top:16px;font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+.stat-lbl sup{font-size:11px;font-weight:500;}
+.stat-fn{margin-top:32px;}
+.stat-fn-rule{width:24px;height:1px;background:var(--hl);}
+.stat-fn p{margin-top:10px;font-size:12.5px;line-height:1.5;color:var(--muted);}
+.quotes{grid-column:6/span 7;}
+.quote{border-left:2px solid var(--ink);padding-left:24px;padding-block:48px;}
+.quote+.quote{border-top:1px solid var(--hl);}
+.quote--featured p{font-family:"Inter Tight",sans-serif;font-weight:500;font-size:24px;line-height:1.4;letter-spacing:-0.01em;color:var(--ink);}
+.quote--support p{font-size:18px;line-height:1.55;color:var(--ink-raised);}
+.quote cite{display:block;margin-top:20px;font-style:normal;}
+.quote cite .qn{display:block;font-weight:600;font-size:14px;color:var(--ink);}
+.quote cite .qt{display:block;font-size:14px;color:var(--muted);}
+.res-context{margin-top:56px;grid-column:1/span 10;font-size:15px;line-height:1.6;color:var(--muted);}
+
+/* ---------- founder strip ---------- */
+.founder{background:var(--surface);border-top:1px solid var(--hl);border-bottom:1px solid var(--hl);}
+.founder .inner{padding-block:56px;}
+.founder-grid{align-items:center;}
+.founder-txt{grid-column:1/span 8;font-size:17px;line-height:1.6;color:var(--ink-raised);}
+.founder-txt strong{font-weight:600;color:var(--ink);}
+.founder-link{grid-column:10/span 3;justify-self:start;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);}
+.founder-link svg{transform:rotate(-45deg);}
+
+/* ---------- 07 faq ---------- */
+.faq-h2{grid-column:1/span 6;}
+.faq-list{margin-top:64px;border-top:1px solid var(--hl);}
+.faq-row{padding-block:32px;border-bottom:1px solid var(--hl);}
+.faq-q{grid-column:1/span 5;}
+.faq-qix{font-weight:600;font-size:12px;letter-spacing:0.14em;color:var(--muted);}
+.faq-q h3{margin-top:8px;font-size:19px;line-height:1.35;letter-spacing:-0.01em;color:var(--ink);}
+.faq-a{grid-column:6/span 7;font-size:15.5px;line-height:1.6;color:var(--muted);}
+
+/* ---------- 08 closing cta ---------- */
+.close .inner{padding-block:128px;}
+.close-h2{margin-top:40px;grid-column:1/span 9;font-size:clamp(40px,5vw,64px);line-height:1.05;letter-spacing:-0.025em;color:var(--paper);}
+.close-sub{margin-top:24px;grid-column:1/span 7;font-size:18px;line-height:1.55;color:var(--muted-dark);}
+.close-ctas{margin-top:40px;grid-column:1/span 12;display:flex;gap:12px;flex-wrap:wrap;}
+
+/* ---------- footer ---------- */
+.footer{background:var(--black);border-top:1px solid var(--hl-d);color:var(--muted-dark);}
+.footer .f-inner{max-width:1200px;margin-inline:auto;padding:64px 32px 40px;}
+.f-brand{grid-column:1/span 4;}
+.f-brand img{height:16px;width:auto;}
+.f-brand p{margin-top:12px;font-size:13px;color:var(--muted-dark);}
+.f-cols{grid-column:6/span 7;display:grid;grid-template-columns:repeat(3,1fr);column-gap:24px;}
+.f-col h4{font-family:"Inter",sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-dark);margin-bottom:16px;}
+.f-col ul{list-style:none;}
+.f-col li+li{margin-top:12px;}
+.f-col a{font-size:14px;color:rgba(255,255,255,0.8);transition:color 0.2s ease;}
+.f-col a:hover{color:var(--paper);}
+.f-bottom{margin-top:48px;border-top:1px solid var(--hl-d);padding-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
+.f-copy{font-size:12.5px;color:var(--muted-dark);}
+.f-line{font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-dark);}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .hero .inner>.grid{display:block;}
+  .hero-art{margin-top:56px;max-width:576px;}
+  .prod-split{display:block;}
+  .acct-panel-wrap{position:static;margin-top:48px;max-width:640px;}
+  .res-split{display:block;}
+  .quotes{margin-top:56px;}
+}
+@media (max-width:900px){
+  .nav-links,.nav-cta .btn--secondary{display:none;}
+  .menu-btn{display:block;margin-left:auto;margin-right:16px;}
+  .nav-cta{margin-left:0;}
+}
+@media (max-width:768px){
+  body{overflow-x:clip;}
+  .inner,.nav-inner{padding-inline:20px;}
+  .grid{grid-template-columns:repeat(6,1fr);column-gap:16px;}
+  .grid>*{grid-column:1/span 6;}
+  .start-note-rule{width:96px;}
+  .h2{font-size:32px;}
+  .sec .inner{padding-block:72px;}
+  .sec-h2,.sec-lead,.start-h2,.ind-h2,.res-h2,.faq-h2,.close-h2,.close-sub{grid-column:1/span 6;}
+  .gap-row{display:block;}
+  .gap-num{padding-top:0;}
+  .gap-title{margin-top:12px;}
+  .gap-body{margin-top:10px;}
+  .gap-callout{grid-column:1/span 6;font-size:22px;}
+  .feat-list{grid-column:1/span 6;}
+  .rail{display:block;position:relative;padding-left:20px;}
+  .rail::before{left:0;right:auto;top:0;bottom:0;width:1px;height:auto;}
+  .step{margin-top:48px;}
+  .step:first-child{margin-top:0;}
+  .step::before{left:-21px;top:2px;}
+  .step h3{margin-top:12px;padding-top:0;}
+  .start .inner{padding-block:88px;}
+  .start-rows{gap:64px;}
+  .start-rows .grid{display:block;}
+  .start-num{font-size:64px;}
+  .start-txt{margin-top:12px;}
+  .start-note-rule{grid-column:1/span 2;}
+  .start-note{grid-column:1/span 6;}
+  .ind-row{display:block;}
+  a.ind-row{display:block;}
+  .ind-name{margin-top:14px;font-size:22px;}
+  .ind-desc{margin-top:8px;}
+  .ind-note{grid-column:1/span 6;}
+  .stat-num{font-size:88px;}
+  .quote--featured p{font-size:20px;}
+  .res-context{grid-column:1/span 6;}
+  .founder-grid{display:block;}
+  .founder-link{margin-top:24px;display:inline-flex;}
+  .faq-row{display:block;}
+  .faq-a{margin-top:12px;}
+  .f-grid{display:block;}
+  .f-cols{margin-top:40px;grid-template-columns:1fr;row-gap:40px;}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0s !important;animation-delay:0s !important;transition-duration:0s !important;}
+  html{scroll-behavior:auto;}
+}
+</style>
 </head>
 <body>
 
-  <!-- ===== NAV ===== -->
-  <nav class="nav" id="nav">
-    <div class="nav__inner container">
-      <a href="#" class="nav__logo">
-        <img src="logo.png" alt="Epselon" class="nav__logo-img">
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Epselon Signals home">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAABWCAYAAADhecDRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAc4ElEQVR4nO2dfZBdZX3HP8/Zm+1OJpMymUwmk8E0wzCZlFJMkQImlHcooFgKlCZobVXUgAhVsYCKjEWKrUpR1MQqL77AoqggCEJ40UY2vqU0RYYiZSgTtymNaVwy63ZN7p6nf3zvs3t2ufc5597znHsX9vnM3Nl795x7znPPOc/v9/xent8DkUgkEolEIpFIJBKJRCKRSCQSiUQikUgkEolEADC9bkAkEol0m3vvvbdmjMRfrVYDwBjDvHnzJvep1Wq4febNm4e1liRJqNVqWGsxxkzbp6+vD2PM5Mt9ttZO2y/7PWvt5PHdZ7c9y8z/uX2z7c1+3507uw2Y3J79O/O7WRrb60mSNL2Otab/jUQikVcw1toPGGNOd4IzSRKSJJkUolmBmf1/VtBm98kqB/fKfj/7fuYxfJ+bHc99ntmu7PezNFMk2b8zlUj2vTFmG3ApkDa7jlGBRCKROUeapr9jrT0iSZIn3P+stZPKJPvebZv5PrtPdoTvlFGaptOE/0wlk30/c/9mI363vR181sbMfZqwylq713fOqEAiET/XAkd6tl8OPN6ltkQCUa/XSZJkbGJi4pRarTaadSVNTExMez8xMTH5Pk1TarXa5D7OneXeG2NI05S+vr5pFkJ2m/vsjtHX1zetbe5z1irp6+ubJuSzx/f9D5j8PrzUVeVxYQ0YY36adx2jAolE/KwETvZsX9SthkTCMTEx4SyI+tlnn72v1+2ZbVhrC+mGqEAikcicw1kTLVw3kYJEBRKJROYcExMTbccT5hIzs7VaERVIJBKZczRiIKRp0+SiCBSyzqICiUQicw4XA4k0x5OZNY2oQCKRyJzDxUAirSni4osKJBKJzDmcCytaIc3Jpvf6iAokEonMOaILy8/+/ftfUk6lGVGBRCKROYdzYcVMrOZkYyBuwmMzogKJRCJzDpfGG62Q5rgyLXnXJyqQSCQy54gxED/1en1aBeFWRAUSiUTmHDEGko+zQHzZalGBRCKROUe0QPJxisN3jWaDAukHDgCWAMuBhcAAsA8YBYaBF4A9wHiP2liEheh3LG28rwFjqN27gL30tv0JsAAV/1vYeC1A13kMXevRxnv36nWivLumy9HzsQD9jlFgBHgeXd8Ret/WKkjQ7z8AWIHu3fzGtlH0XA2ja7C3B+1rB/fMuf7Rj56xXcBu1P6uFTXMFFPs1ilfVrgsrLw4US8VyKHAXwDHAqtQJ2nFGPAs8CPgK42/9YBtWQIc6Nn+LM076HzgDOBPgTXAMtQxZrIXCbufAN8FHkC/qRscApwLHNV4vxwJplaMoA79LPAD4FFUrrxbnXsB8HrgHGA1EpytntMUDS6eBB4Ebm98frmzGF2DM4GjkdBtdc/qwA5gC3AvsBkpl5Asb7SpGSnwFM2fj0XAG4DXAYejPjazf6ToeRtuHOdr6DdU+rxFBeLHua5cCfrZQg04DXgImABsh6+fARegkUwI1uWcb/WM/ZcBfw/8ssP2/w/wISQYqiABzgL+mXLXOdveryBlOVBRm5cBHwb+u0Q7fw3cBBwWsF135pzTV+q9XQ4DbgP+L+ecvteLwKeAgwK26zrP+X7FS0vaHwxsbLSlk9/wH8B70WCiEi6//PKbrrzyyhevuOKKUDLkFcXIyMj8F1988ecvvvjigyMjIy0HnL6RaGhWA99Go6STS577UODzwA+RUOuWJVUDzgd+DPwNrUdleSwBrmkc5wLCCuWD0CjuTmTdhbjHS4A3ofv3U9Rmn8XYDvOBixrH/QjllOp84K3AEHBjyWN1k6XAJ9HzfD7lnoeFwCXo2fow4QZZRViM7uGPgQ0lzn0w8HF0Hw8P07TpuIWifHMc5jL79+8vVO6+Gwqkhh6m7xFW2CfIJfNN4B8JJ9BaMYCE0pfwu7vaYTlShLehEXhZDkfW3blUo1RrTCnvocZ5yjxDK4G70HUN8fsdC4CLkQV2Kt0dKLVDggZTQ2jEPd+/e1s4Yf491E+q5hj07H2YMItsJcgiuw84McDxpjExMUG9Xo8KpAXOheWuUyuq7lj9yJzeSHUCfgAJi4cIJ9ibneNLSBGGFswJcDbq6KtKHGc1iq+EdF20winvO5Frq5OR5vFIcFYp4Fciq+miio5fhgQ9t/dS7T07HMWy1lV4jlPRszfT1RuCpege+pYVbhunPHzCcS7jFEheGm+VCqQfjVS71XmPQA9xFUrk48B5FRw3ixN2Kzr47kLgs8jV1G0GaD+77FgkODt1AbbDALJQr+jCuYpSAy5D7aoqppRlEXAL1fTFBcAXqDBe0Tj21wi4fHB0YfnJXp9eKJAEuBr5zYuSouyR3SiTZhfKCGpniHAoGhGHXqf6mDb2denHnQxtnBJpVxFcgLJ1ilBHaZ/PA080/rpr3W7my27gPW1+72AkzNoROONMpUO7lO52sthq6HmschTeDhtQDKzd/pei3z1O+2nLAyjOclab38ujRvF7mdJ59uQK5JILIrOiC8uPszzcqxVVBZ9PQ0HmIsffBdwBPILSMfcgATyA3F4HIQH+5xTLrjkePWjvbrfRHTLOVHruE+j3jCIltgw4AaVkLi94vMNQhtfbKdbZasAbye9Ye4FNaOT/NBL+jvnoWi9rnP8olJZ8iOe4deCDKIW0KAPIUiriskmBrchNtgUpDjffYyGyXo5AKaJvID9+MIAs4idQumivWANcS/N072YMA/ej/rET9Y8E/f7lwCmovxWx5gZQltrTjVfV1IFtKC33Z+iZG0PP2oGob5xK8QHTm5HV9lzphlU0kXDtuk1LLHaxMabfWju29Y4Lnwl6ggxr1m+sGTjEWpMYwzjYnUODFwaZD1Sv1+nr68MY0/UlbZcikzbv2LtReuA/0Txv3U1sG0YC5GOoo1xDfmbGxSj49kDhVrfPKPBV9Bt8QvQbwKVIiXwQtT1P2L8JBZfvKdCOQ8gPkn4f+EtPO93EwZ2ow9/c+P9BSDj/CbJwsu6WzcCtBdqX5RLy015TNPfkSjT/pNnwZ3fj9TS6B8vQNb4YvyJZiJ7NU+jePJwsS4BBisWMnkHX4B78A4kvo/tyAXq+8jLPFqFr8MdUdw3q6Lm/DinsVtyMrJcLgMvJb/tC4J2NfUvh5oGEnOOwdv2mY621JxlMYuE3xpid6D5WgsH0W8tpxjAAzAPzmzXrN3196+CGIOcsMg8ktAsrQaP/vIyax4GTgOspPukpRSOxUxrfyxudX0N1ftkdaOT7LoqNwOvA3WjEdRX5ba+h9hdJPDgYvx99GFko7VgKjueAG9A1Pw4Js31IeF9Oe66rg5BA9D1zY43jnokUWdHevbNx7JPQBEgfR1N9PKsZzq2bZ4nWgc8Ba4FvUcwKHQc+0/jO/QX2X4PSnatgBHgLmiTsUx6OUfSMnY48EHmcRwAXtXNhhbJA1q7ftMhajscYMDxo9JtuD3Lw1oyD/YzF3gD8C9b+lrGcvHb9pqLWbUtcGm9eKm9oBXIIymP38QQa0RZ5uJqxBwmZv8MvYI5A2U2heQYJ1C0552/GKLKk3k2+YDgUpcnmkZc0cDcSsGWoIzfdOUhxvo9ind2RIMXpU4hpY5/r6azkS4oqFJyJX4kkwPupNujbjNXkC+0UDRzew3QXY1GeQ67eu3P2SyhmrbTLKPBnyCpsN9axHT1beZUElhNgoqgLEAfMwlpmDPPA/hrstqHBDaNDgxsqLV00NLgh3XrHhWNb5bb6iZSXXUSAZ9taWyjRILQCeRv+xu8G1qNRcRnqyNL5Ts5+lxI2t34ElS0pYyKmKBbxEfwKKEHmet49yvt9/1m8abnUgYeR26QdDiZfGX4ajdrK+hSeRhaXz7JdRfhgso8EKd28jKvPAR+lXBmPUaRE8tyfSwlvhVyDno9O2YEGh3n9op2klqaEzsKy1s4HMJjRocELe1Hzbk/j7zwbIDRRr9e7boEsxD/idyPMUAHMFLmQfKPrwwiXP14HLiRc+z9Bfmc7DFkiPvKsi7X0vmjm2fgHFtvRiDiUQ/onyP/eCqecu8VyFL/zsY184VmUfahv5AWb3064NOKn0MCoLN8iP8D/e2VP4jKwQikQY0yiKizdKwg5g30WC5gEa4Nlqk1MTLB///6W+4RUIK6YYCueJLxPcBhl1rSihiyGEDyOHu5QjCOfuG+00o+C7z7yFMgbkLXTjfkGzUhQwLYVKcqsCR3QvRllxLXiaIpnxpXlRPx++3FkLYe8BsPovvtYgebkhOBThKkIPEp+Pyt934oIx/YxDR3SGwxmshll6UUM5AT8I90vUE3J6VuZMt+aEaLYXYpSa0OPLraRnyl2Cv77tB2/oKwBH0Az3d9K9+tDLcVvRQ1TLNusXV7AL4hqhBOeeZyes30zit+E5hvkx6pCDLD2Nc4VikdytgcJoudNkmsLa8GC7ZEGse78FoJoEIq5+UIqEF9n3Ed1KbXDyGXRihWUH7G8ADxW8hjNqKOJjz4Oxx/n2E1+LAg04r4J+AXw7433FzSOv4Rqy4n4OvwDKLZUBV/D7xI6rqLzZqnhn+SZolpgVdTMHkMDNx8z07M7YTth7+GzOccLloUVdCKhAXKWgK0Ko+yvYKcvaoGE9I2v9GwbQ26KqgrLr/Bs629s7ySN1fE4/lF+Gb6Prk8rJbEQuQZ9gfvPojhDkbTfGgoir0IWyT5kGbp5Fc8A/4aso52UX1tiNX7ldCiafV8FNfTMtTr/wY1tVS54sBz/fdmJBHBVPIoGKq36+nIUnyoT+P0RYa9hHb+134/a3PGzOTExkbved1u4Y/VsfRGLszxC/CqXhZU3DySUAjkA/6jgAPJ9+VVRo7wF8oMQDWnBCBLWPgtuBX4Fsh3V6+qkPEY/msW8mOnFHPehIOxWNMv+Ufyuwlb8fs72NR0cMxRL0ei7ykmFy/CP8J+is5TdojyFLOhW6d6u75Zpwy9LfLcZdfxpwAnFZ/I3JbgCaVDFMQueOfO+vBLLzkT3EcptUXUp9bKUbV+VHTwlP605r0xFiuaX5M2NaYd+pqyUO9EiP7fQflZbNwomdko/1WeoLcs5R+myHDmkqN5ZKxLKF+HsZGCRR6XL4FUwD2SgsR5WLyocOJ3x64YlUjphxpVy71Y5925PymqXsnNBquggWfIyqYq0P0VZXe+k/DybZiwC/gqtsbGR4sH4kPNwXo7kCedfdKENec9D2XsUegndygk5D2Ttuo0NJWygV0sqG1KwuxptKJ0ok00y6EYW1mwvql92VFD1osB52V1F71MKfBHN/diE4jah2z6Aqsl+l2ILFc2eBZVfyj5m/7MbqYBQWVhr1m3CYpZZxYD/F8y2MC1sj6HBDYDZAvzGWo5cu37TwjXrO5+W44Lo3bJAemO2FaesBVG1iy6vdli713cHmvT4u6gm0e2ETwJYjRbxyrs2s3l0Okb1CiTvur+q4vNDfrmb2d5/g+OURxkX1pp1GxcYY89GxU93gL11aHBDFVMVCjE0uOFZsLfLGuEC4MQ16zd2JOOzpUy6oUB2M3tHminlhWeVCiQh3+TsNEVyD1Ieb0SC6tVIsdyKUp9foNx9W4ZSUH0+/ircaaHoZF2Ndsm7xlWvIJmQv0hZlTG+WUkIC8QY0w9mJdhxY+12a03PlEemVS8Y1RkcwNqDjDUdyfjsTP1upPG6UuCtRjrDqIBdr6b5d1q40fHqIK1oTj/5S4E+H+A8+9B1eAK5t2pIMS5BqbR/gOaEHILiHUX94uehDLBW1/hnOd//DJrk2At2U70FshMpqlbX013vquJsq/APUEYqPPespchyrXlYy4gxbDLGHAmcY2DF2vWb7h8a3NATt+iadRsXAOdbyxJjeMAY8zQdPt/dTuMFpQu2UiBL0VyKymrjV8yxlMw797Aafwcfp9wcllbUmVpX4yng643/z0cj1jWoKN+J+C3VfuQme3+L7dvxz0NYTNgSMbONHUhIt1Igy5AC31LR+Y/H3893UE2FiFmNW1CqDFvv2JACI2vXb3oU7Aowr0GTILu+YNlaxTuOxdpXAT8cGrywVCxm//791Gq1rqXxgrJzWlEDzgh4rm6zguJLxrZDghZ68vEE3fVRj6EO8EVUw+p15LvQfHNYnsOfmXIs4Zcgnk3sw18pIUFFDaugn/znaxvlJhG+LCkSIC7K0OCGOpYdQGKtLZJYUgWJhVXWGDCmdGp4dqZ+t4opPobfRfV2iq3ENhupoRF26HIfK8lfp3srvcsUSlGpkXfj9+P7XF57kJBqxTK0VOkrmQdztp9FvhuzE85A6+L4qKoKwKymSIpqWxizFyymZzLOYrC/bQATwKLMzgPp1oqE2/C7WtyktCpYhkp5VFXPCeQKCFGY0ZGg8t2+AH0dLW1bhH6qK5S4Bf9DuQD/XKBv5hz/PVRnhZxH9wtIzmQz/jjDAuCThHUpL0LVeH19Ygdq25wjpAUibNooRlWlDPJgYCpgXjoxJBtE71YxxTHgS57tbknPvPXM22U+Kgx4G/DXVDezuB+Vjs9LuS3KBSj9z8dzFKvSWkPrX/wUjeZLL2k5g7wZ2wn+Z2kz/smSy4Frc47RCWeh5+JBppdp6TbPk19M9ETUP0KQoNpzeSv3fZ456L6CCqrxYrDW9q4UlpqgufABDpVVsN1I43Xcil9QHIBGo6FSF5cD96LFegZQNtCNVLf2xQokkMqW5zgedfA8ZXcLxTLX3gpcgpIYbkHlsI8l3P09D7+FsRe/hbILFXz08Q7gCsIMAGpIOd/WeH8Yuia9qruVIgsjT1h/ALiMctdgAXoG8gYnL6A1U+YkrtJssGq8Vutx9KwUFoC1mEAKLGuBdMuFBUrXvTFnnxVIiZTx+daQO+kRNHJzJEgQDVKdS+R45FbyVR9uRT8S9veSnyY7jNaWzuNktFaJEzpuyc8HUQ2rYyinUI9BrjYfRQL9n8M/JyRBLperKNfexUhY38T0a7wMXffzqdbV2Yrt5N/PBFmSn6KzQcpB6Nl/M/7fmKLBVm/KbswCQi9pSyP40EsDBGOwgRRYL1xYjk3kp7GtRsL/MtoPOh2G1tC4D5XjnkmCXBcPUt2Kc8egCr0fovgkw0OR4vw8xWqHXUP+JLyD0LVo1oYBFBf6XuP1Xtqz/BYgq+Yu8u/RfQWON4KWrfU5nWvomn6bYmVSsixAgvOHqN3N3HiLkGK5pM1jhyBFCjJvUmsNuAgYQveviDUyAFzc+E6RqtfbUZbdnMVZIOFcWL1bTCrbgsyqUqVws/Tz4kRVxAtGUMbVQ/hH2YvQKOhy4A4k8N26G9kWL0H+62NQSunRFFN8RyBT/nSqmcC4BAn5S5F/+y60nsYoGo0vQIL9aLTq2/EUj01sRu5AH4vRgkl5AWK3oNHR6Ho/iyyGf2383cmU9bAIKeU/QkvhFqnSOgzcXWA/0Kz40/FnniXAqWhNki1I6W5ttDs7D6cfKcTVaNXG1xds7wCy2J6l2EJcIRlGabV3kW9lrUS/fRi4Hw24dqJgfILu/3L020+juMUyivrnnJv7kWViYoIkScJlYTG5pGxPgugWmxjXggBWiJuBnqdgqwo4b0XC9ZoC51iMRk8XoYd6HCmhOhLCCxuvdtu6A3gf1c9+X4z8zeejtru1DGpIyLXrjtkJvIv8dudNQGxGggTTSuDcxv+y5Tw6KW9+HcVnMteRwl1FvguzhtyTJzbamH02BphS0O1Wkk2RlVzVCpl5bEbB8mspdq0PRG7Zd6C2jzO1Hka7wmocKY/H2/zeKw6XwhtMgVjGrdJ4F6xdv6nWg9noC7WkLvuNKZ/234uJhDP5BHADxVPKEiQQliIBcyiKlyyifaH2DBrphlrprchvSJAwW4javJD2lccIcA4aHefxMHASWtGwjB0+gNo9n/av88O07wrZhWa4P9/GdwaQdbEcuTBXophGJ8rjY2hOTy/n1lyPlEi79809YwO033f3MWXtz3mKLNfaFoZdxpgUYxaAXba2RCXcdlmzbiMGs6IRhxklQMWMbPyjm1lYWerAlcjv283O+gBa6zpkOYFvAE8GPF4zdgFnUixt1+EU5fvofj2jbcgd04mF9wxyvVR9TbOMIsvuKnpXk81RR4rsKrrTN8ZQEc1Pd+FcLwucAgk1D8QqIeG/wM7Dcj5w7tr1G30VGkqzdt3GgbXrN51hjDnfWs7AWgw8NTS4oXRqdjYG0u0gepY68FE04qy6KutuNGP6HMJnlwwjQV2V2+PJxvEf6+C748jSezWy+qpau91RR7GMU8hfCMvHs8AJwJepVqDXUQzhKOS6mi1Vo501dA7Vrkq4HQ2o5mzKbjNCB9C3Dm5IsXwVeESlRGy/tRUvpmYMYBcCGHgaY+5CXoHS7N+/f1o5k1ZUvZwnqKN8C41Yr0axgpDzNEZRIcDrKOb66ZRh1NkvQzOnQ5R4H0Ud+xrKl9R2FY9vRPGNtyBXT8hJhTtQJtXXCSP0dwNvQ8Hij6MAfqhBTYoU89VIgfTa6mhGCtyDamW9Hy3UFUro7EbPwg3M8YB5M9I0xRgTLo0XGLpjwxhyKXeFhqVRiUvSVeLNq8bbzYyBHSiAdxwadZb10+1GpcCPQ0KoSuXhGAP+FmUp3UHn7oc6coudgILKIddj2IF87K9BMZJ/QO68MsOtbUhpHoXmMoQUxnUkRI9Cy/GWjVulyJJ7C/BalCE2G5VHlheQG/K1yLor44LYi1xVR6FnNSqPJoS2QF5pZK2PbpVzL0KKRltuxPVmJOQORcFzX3t2M1Xa4yGk6Xu12t2TwHo0un0bSjtdhd+y2osE+cNo7kbVpe33IUH6GIpFLUapvH+ILJODUbC/nykrZRwpyRH0G3+MMurKKqAijKCA/M0oZfuNwJEoVdc3D8WVu38KzXfZjK5tqPZ+Fv88l5CxtifQ716M0pLPRPdsKa0He3X0+7egiZKbCd8v7gR+7tm+NfD5RpFCbWWN7aNkhWpngYRM430l4SyzXqXxFmEX8tlfjwTEASjLZgl6cBKmBNrzyN++l9k1mnwGZbZcjdp9MFMCrx91hD3IOtrReN+L9rtVGe9pvGi0z11nJ5xcCrJLR+4FKRKGW5BCdoteHYiu63x0DcfR9XwGKZ+qBhPfr+i4PnajeUBfRr//AKYyEp1QHUX3dBhdhyotjcfpburvOFPr01SCUyDRCmlOvV7HWkuSJLPKAmlGigTACGFW3usFbhS8A3i0x20pyj5mlzJuxjhy77xA+VUlX46kSDnsodpA+5wj6ByQVyBOaeRNJpwNCiQSiUS6SnRh+anX6/T19c1qF1YkEon0hOjC8uMmWb4cXFiRSCTSVZwCiTTHrRmfZ6FFBRKJROYcTjBGF1Zzsi4s3zWKCiQSicw5ogvLj6vGG11YkUgkMoNoefhxCiS6sCKRSKQJUYm0JmZhRSKRSKQjsi6sGAOJRCKRSGGiCysSiUQiHeFWJIwurEgkEom0RZqmkyXdowsrEolEIoXJFlOMCiSfUVQIsRW/6lZDIpFIpNe4pX7jRMJifKfxikQic4sgi+r19fWRJNMPlSQJfX19L9nPlVBxK/7ValNieObnmcet1WqTbqUkSabtO2/evJecxxgz7Rju+63eu/Nba5mYmIgTCSORSKQFA8Bgp192Ate9t9ZO/s+9Zv7P7ev+OhdRq+8Ak5+z+yZJMm3fmceZ2b5mbZy5f3afxjyQpWmaPu+rGRYVSCQSmYvsQYtxrez0AFnXTjvFGbP7uvdZKyNN08nPzd5nvzPzvNn/u8/Zbb732XhH43+7jTG7fC6sWI4yEonMRVotl1uarPvIkXVNOYHc19f3EhdX1g0187NzRzkroVarTSqX7LaZ32vmwrLWTp4/+z67T+b92H33+VZ1jkQikUgkEolEIpFIJBKJRCKRSCQSeWXx//mnN+nYZIrIAAAAAElFTkSuQmCC" alt="Epselon Signals">
+    </a>
+    <ul class="nav-links">
+      <li><a class="ul" href="#product">Product</a></li>
+      <li><a class="ul" href="#how-it-works">How it works</a></li>
+      <li><a class="ul" href="#industries">Industries</a></li>
+      <li><a class="ul" href="#faq">FAQ</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">Menu</button>
+    <div class="nav-cta">
+      <a class="btn btn--secondary btn--nav" href="https://calendly.com/epselon/enquiry">Talk to us</a>
+      <a class="btn btn--primary btn--nav" href="https://signals-demo.epselon.io">See a live demo
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <div class="nav__links" id="navLinks">
-        <a href="#services" data-section="services">Services</a>
-        <a href="#how-it-works" data-section="how-it-works">How We Work</a>
-        <a href="#results" data-section="results">Results</a>
-        <a href="#faq" data-section="faq">FAQ</a>
-      </div>
-      <a href="https://calendly.com/epselon/enquiry" class="btn btn--sm btn--primary nav__cta" target="_blank" rel="noopener">Talk to Us</a>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-    <!-- Mobile menu -->
-    <div class="nav__mobile" id="navMobile">
-      <a href="#services">Services</a>
-      <a href="#how-it-works">How We Work</a>
-      <a href="#results">Results</a>
-      <a href="#faq">FAQ</a>
-      <a href="https://calendly.com/epselon/enquiry" class="btn btn--primary" style="margin-top: 0.5rem; text-align: center;" target="_blank" rel="noopener">Talk to Us</a>
-    </div>
+  </div>
+  <nav class="menu-panel" id="menuPanel" aria-label="Mobile">
+    <a href="#product">Product</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#industries">Industries</a>
+    <a href="#faq">FAQ</a>
   </nav>
+</header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="container hero__container">
-      <div class="hero__badge anim-hero" data-delay="0">Revenue Engineering for B2B Teams</div>
-      <h1 class="hero__title anim-hero" data-delay="1">
-        We build the systems that
-        <span class="hero__title--accent">find your next customers</span>
-      </h1>
-      <p class="hero__sub anim-hero" data-delay="2">
-        Most AI is making marketing worse. We build revenue infrastructure
-        that identifies the right accounts at the right moment &mdash;
-        so your team focuses on closing, not chasing.
-      </p>
-      <!-- VSL: unhide when ready
-      <div class="hero__video anim-hero" data-delay="3" id="vsl-hero">
-        <div class="hero__video-placeholder">
-          <svg viewBox="0 0 64 64" fill="none" width="56" height="56"><circle cx="32" cy="32" r="30" stroke="rgba(0,0,0,0.1)" stroke-width="2"/><polygon points="26,20 26,44 46,32" fill="rgba(0,0,0,0.15)"/></svg>
-          <span>VSL video goes here</span>
-        </div>
-      </div>
-      -->
-      <div class="hero__cta anim-hero" data-delay="4">
-        <a href="https://calendly.com/epselon/enquiry" class="btn btn--primary btn--lg" target="_blank" rel="noopener">Talk to Us</a>
-        <a href="#services" class="btn btn--outline btn--lg">See Our Services</a>
-      </div>
-      <div class="hero__visual anim-hero" data-delay="4">
-        <div class="hero__dashboard">
-          <div class="hero__dashboard-header">
-            <span class="hero__dashboard-dot"></span>
-            <span class="hero__dashboard-dot"></span>
-            <span class="hero__dashboard-dot"></span>
-            <span class="hero__dashboard-label">Signal Monitor</span>
-          </div>
-          <div class="hero__grid">
-            <div class="hero__signal-card">
-              <div class="signal-card__dot signal-card__dot--green"></div>
-              <div class="signal-card__content">
-                <span class="signal-card__label">Signal Detected</span>
-                <span class="signal-card__value">New CTO appointed</span>
-              </div>
-              <span class="signal-card__score">92</span>
-            </div>
-            <div class="hero__signal-card">
-              <div class="signal-card__dot signal-card__dot--blue"></div>
-              <div class="signal-card__content">
-                <span class="signal-card__label">Funding Event</span>
-                <span class="signal-card__value">Series B &middot; $18M</span>
-              </div>
-              <span class="signal-card__score">87</span>
-            </div>
-            <div class="hero__signal-card">
-              <div class="signal-card__dot signal-card__dot--amber"></div>
-              <div class="signal-card__content">
-                <span class="signal-card__label">Tech Stack Change</span>
-                <span class="signal-card__value">Migrating CRM platform</span>
-              </div>
-              <span class="signal-card__score">78</span>
-            </div>
-            <div class="hero__signal-card">
-              <div class="signal-card__dot signal-card__dot--green"></div>
-              <div class="signal-card__content">
-                <span class="signal-card__label">Hiring Surge</span>
-                <span class="signal-card__value">4 SDR roles posted</span>
-              </div>
-              <span class="signal-card__score">85</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<main>
 
-  <!-- ===== LOGO BAR ===== -->
-  <section class="logos">
-    <div class="container">
-      <p class="logos__label">Pipeline infrastructure for B2B teams across</p>
-      <div class="logos__track">
-        <div class="logos__row">
-          <span class="logos__item">SaaS</span>
-          <span class="logos__divider">&middot;</span>
-          <span class="logos__item">FinTech</span>
-          <span class="logos__divider">&middot;</span>
-          <span class="logos__item">GovTech</span>
-          <span class="logos__divider">&middot;</span>
-          <span class="logos__item">Cybersecurity</span>
-          <span class="logos__divider">&middot;</span>
-          <span class="logos__item">Professional Services</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SERVICES ===== -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Services</span>
-        <h2 class="section-title">Signal-based pipeline infrastructure.<br>Built and delivered.</h2>
-        <p class="section-sub">
-          Every engagement starts with research and ends with deliverables
-          your team can use. Pick the depth that fits your stage.
-        </p>
-      </div>
-      <div class="services__grid">
-        <div class="services__card">
-          <span class="services__card-tag">Entry Point</span>
-          <h3 class="services__card-title">Signal Report</h3>
-          <p class="services__card-price">Entry-level engagement</p>
-          <p class="services__card-body">
-            Clay-powered sweep identifying accounts showing real buying signals &mdash;
-            leadership changes, hiring surges, tech stack shifts, funding events.
-          </p>
-          <ul class="services__card-deliverables">
-            <li>50+ accounts with verified buying signals</li>
-            <li>Signal-type breakdown and scoring</li>
-            <li>Prioritised target list with research summaries</li>
-          </ul>
-          <a href="#" class="services__card-link">Learn more</a>
-        </div>
-        <div class="services__card">
-          <span class="services__card-tag">Core Project</span>
-          <h3 class="services__card-title">Total Market List Build</h3>
-          <p class="services__card-price">Scoped per engagement</p>
-          <p class="services__card-body">
-            Complete addressable market, researched and scored. Every account qualified
-            against your ICP, enriched with verified contacts, segmented by pain point.
-          </p>
-          <ul class="services__card-deliverables">
-            <li>Full TAM list &mdash; uncapped accounts</li>
-            <li>3-5 verified contacts per account</li>
-            <li>Pain point segment + signal summary per account</li>
-          </ul>
-          <a href="#" class="services__card-link">Learn more</a>
-        </div>
-        <div class="services__card services__card--featured">
-          <span class="services__card-tag">Full Build</span>
-          <h3 class="services__card-title">GTM Infrastructure Build</h3>
-          <p class="services__card-price">Full build &middot; 30 days</p>
-          <p class="services__card-body">
-            End-to-end pipeline system. Signal detection, multi-stage scoring,
-            pain-point segmented copy, campaign infrastructure, and CRM integration.
-            Built and launched in 30 days.
-          </p>
-          <ul class="services__card-deliverables">
-            <li>Signal detection + scoring system</li>
-            <li>Campaign copy across personas and segments</li>
-            <li>Multi-channel campaign infrastructure</li>
-            <li>CRM integration + handoff workflows</li>
-          </ul>
-          <a href="#" class="services__card-link">Learn more</a>
-        </div>
-        <div class="services__card">
-          <span class="services__card-tag">Ongoing</span>
-          <h3 class="services__card-title">Audience Refresh Retainer</h3>
-          <p class="services__card-price">Monthly retainer</p>
-          <p class="services__card-body">
-            Monthly refresh of your ICP account list, audience uploads to ad platforms,
-            suppression updates, and match rate reporting.
-          </p>
-          <ul class="services__card-deliverables">
-            <li>Monthly ICP account list refresh</li>
-            <li>Ad platform audience re-upload</li>
-            <li>Match rate and suppression reporting</li>
-          </ul>
-          <a href="#" class="services__card-link">Learn more</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="how" id="how-it-works">
-    <div class="how__bg-shapes"></div>
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag section-tag--light">How We Work</span>
-        <h2 class="section-title section-title--light">Research first. Then build.</h2>
-      </div>
-      <div class="how__flow">
-        <div class="how__timeline-line"></div>
-        <div class="how__step">
-          <div class="how__step-number">01</div>
-          <div class="how__step-content">
-            <h3 class="how__step-title">Research</h3>
-            <p class="how__step-time">Weeks 1-2</p>
-            <p class="how__step-body">
-              Discovery workshop. ICP definition. Pain point segmentation.
-              Signal mapping. Market sizing. The foundation everything else builds on.
-            </p>
-            <ul class="how__step-outputs">
-              <li>ICP Framework</li>
-              <li>Pain Point Segments</li>
-              <li>Signal Map</li>
-              <li>Market Sizing</li>
-            </ul>
-          </div>
-        </div>
-        <div class="how__connector"><svg viewBox="0 0 24 40" fill="none"><path d="M12 0V40M12 40L4 32M12 40L20 32" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div class="how__step">
-          <div class="how__step-number">02</div>
-          <div class="how__step-content">
-            <h3 class="how__step-title">Targeting</h3>
-            <p class="how__step-time">Weeks 2-4</p>
-            <p class="how__step-body">
-              Signal-based account scoring. Verified contacts enriched per account.
-              Segment mapping across your ICP. CRM-ready exports your team can use immediately.
-            </p>
-            <ul class="how__step-outputs">
-              <li>Scored Account List</li>
-              <li>Verified Contacts</li>
-              <li>Segment Mapping</li>
-              <li>CRM-Ready Export</li>
-            </ul>
-          </div>
-        </div>
-        <div class="how__connector"><svg viewBox="0 0 24 40" fill="none"><path d="M12 0V40M12 40L4 32M12 40L20 32" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div class="how__step">
-          <div class="how__step-number">03</div>
-          <div class="how__step-content">
-            <h3 class="how__step-title">Messaging</h3>
-            <p class="how__step-time">Weeks 3-5</p>
-            <p class="how__step-body">
-              Pain-point segmented copy across personas. A/B variants for every angle.
-              Follow-up sequences calibrated to each segment. Built for multi-channel execution.
-            </p>
-            <ul class="how__step-outputs">
-              <li>Campaign Copy</li>
-              <li>A/B Variants</li>
-              <li>Persona &times; Segment Matrix</li>
-              <li>Follow-up Sequences</li>
-            </ul>
-          </div>
-        </div>
-        <div class="how__connector"><svg viewBox="0 0 24 40" fill="none"><path d="M12 0V40M12 40L4 32M12 40L20 32" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div class="how__step">
-          <div class="how__step-number">04</div>
-          <div class="how__step-content">
-            <h3 class="how__step-title">Enablement</h3>
-            <p class="how__step-time">Weeks 4-16</p>
-            <p class="how__step-body">
-              Campaigns live. Pipeline reporting. Continuous optimisation based
-              on real response data. Handoff workflows so your team closes, not chases.
-            </p>
-            <ul class="how__step-outputs">
-              <li>Live Campaigns</li>
-              <li>Pipeline Reporting</li>
-              <li>Continuous Optimisation</li>
-              <li>Handoff Workflows</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== RESULTS / TESTIMONIALS ===== -->
-  <section class="results" id="results">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Results</span>
-        <h2 class="section-title">What our customers are saying</h2>
-      </div>
-      <div class="testimonials__featured">
-        <div class="testimonials__card testimonials__card--hero">
-          <div class="testimonials__card-inner">
-            <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
-            <blockquote class="testimonials__text testimonials__text--lg">
-              Over the past year, we've gained about five repeat business customers, which I'm very happy with. Our return on investment is <strong class="testimonials__highlight">8.2X against spend.</strong> This isn't just one-off wins; it's compounding growth. If we add another six clients next year, it just keeps scaling.
-            </blockquote>
-            <div class="testimonials__author">
-              <div class="testimonials__author-avatar">SD</div>
-              <div class="testimonials__author-info">
-                <span class="testimonials__name">Shaun Deacon</span>
-                <span class="testimonials__role">Managing Director at White Bay</span>
-              </div>
-            </div>
-          </div>
-          <div class="testimonials__metric">
-            <span class="testimonials__metric-number">8.2x</span>
-            <span class="testimonials__metric-label">Return on<br>investment</span>
-          </div>
-        </div>
-      </div>
-      <div class="testimonials__grid testimonials__grid--three">
-        <div class="testimonials__card">
-          <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
-          <blockquote class="testimonials__text">
-            The operational improvements from Epselon's work have already had a noticeable impact. Their team not only provided both operational understanding and technical expertise, but also took the time to understand our business. They possessed a deep understanding of our needs and deliver efficient, tailored solutions. I would highly recommend working with Epselon.
-          </blockquote>
-          <div class="testimonials__author">
-            <div class="testimonials__author-avatar">JH</div>
-            <div class="testimonials__author-info">
-              <span class="testimonials__name">Jasmine Hikuroa</span>
-              <span class="testimonials__role">Corporate Account Manager at H&amp;L</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonials__card">
-          <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
-          <blockquote class="testimonials__text">
-            Working with Epselon has been transformative. Their hyper-personalized strategy helped us reach qualified prospects within our ideal customer profile. The sophistication and precision were unparalleled, elevating our prospecting efforts to new heights compared to previous campaigns.
-          </blockquote>
-          <div class="testimonials__author">
-            <div class="testimonials__author-avatar">SC</div>
-            <div class="testimonials__author-info">
-              <span class="testimonials__name">Simon Chin</span>
-              <span class="testimonials__role">CEO at Flowstate</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonials__card">
-          <svg class="testimonials__quote-mark" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.24 4.48 1.44 13.44 0l1.28 3.36C9.6 4.8 7.36 8.16 7.04 12H12.8V24H0Zm18.56 0V14.4C18.56 6.24 23.04 1.44 32 0l1.28 3.36c-5.12 1.44-7.36 4.8-7.68 8.64h5.76V24H18.56Z" fill="currentColor"/></svg>
-          <blockquote class="testimonials__text">
-            If you're hesitant about outreach, give Epselon a try. They understand agencies, fine-tune messaging for your audience, and deliver results. The investment is small compared to the upside &mdash; consistent, high-quality leads that fuel long-term business growth.
-          </blockquote>
-          <div class="testimonials__author">
-            <div class="testimonials__author-avatar">EW</div>
-            <div class="testimonials__author-info">
-              <span class="testimonials__name">Ed Womersley</span>
-              <span class="testimonials__role">Director &amp; Founder at Hustle</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">FAQ</span>
-        <h2 class="section-title">Common questions</h2>
-      </div>
-      <div class="faq__list">
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>We already have an outbound agency / SDR team doing this.</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>That's actually the ideal starting point. We're not replacing your team or agency &mdash; we're building the targeting and research infrastructure that makes them more effective. Most outbound teams work lists built on firmographics. We add the signal layer that tells them which accounts to prioritise right now. Your team still does the selling. They just spend time on accounts in an active buying window.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>We tried outbound and it didn't work for us.</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>When most companies say outbound didn't work, what they mean is volume-based outreach didn't work. And they're right &mdash; that approach is broken for considered-purchase B2B. What we build is fundamentally different. We start with signal detection and pain point segmentation before a single message gets sent. The diagnostic answers whether our methodology fits your market in two weeks &mdash; with real data, not theory.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>Can't we just set up Clay / Apollo ourselves?</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>You can, and some of our clients started there. The challenge isn't the tool &mdash; it's the methodology. Clay is a data enrichment platform. It doesn't tell you which accounts to target, how to score them, what signals matter for your market, or how to segment by pain point. We use Clay as one layer in a larger system. The value isn't in configuring a tool &mdash; it's in the research, scoring, and segmentation logic that drives it.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>What services do you offer?</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>We offer four core services: Signal Reports, Total Market List Builds, full GTM Infrastructure Builds, and ongoing Audience Refresh Retainers. Every engagement starts with research and ends with deliverables your team can use. We scope and price everything on an intro call.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>Can you guarantee meetings or leads?</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>We don't guarantee meeting numbers because that incentivises the wrong behaviour. Agencies guaranteeing 20 meetings a month spam 50,000 people to hit their number &mdash; you end up with unqualified conversations and a burnt domain. Campaigns typically produce qualified responses within 4-6 weeks of launch. But if you need leads by next Friday, we're not the right fit.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>How is this different from a lead gen agency?</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>Lead gen agencies sell volume. They're optimising for meetings booked, which means bigger lists and more touches. We're a revenue engineering firm &mdash; we build the infrastructure that identifies which accounts matter and why. The difference shows up in meeting quality, response rates, and pipeline that actually converts.</p>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            <span>What industries do you work with?</span>
-            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>B2B companies with considered purchase cycles and deal sizes above $50k AUD. We've built systems across SaaS, FinTech, GovTech, cybersecurity, and professional services. The methodology is industry-agnostic &mdash; the diagnostic adapts it to your specific market.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER CTA ===== -->
-  <section class="footer-cta">
-    <div class="footer-cta__bg-glow"></div>
-    <div class="container">
-      <h2 class="footer-cta__title">Better accounts. Better timing.<br>Better pipeline.</h2>
-      <p class="footer-cta__sub">
-        We build the signal-based targeting infrastructure that turns market data
-        into qualified meetings.
-      </p>
-      <a href="https://calendly.com/epselon/enquiry" class="btn btn--white btn--lg" target="_blank" rel="noopener">Talk to Us</a>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer__gradient-line"></div>
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__brand">
-          <a href="#" class="nav__logo">
-            <img src="logo-header.png" alt="Epselon" class="nav__logo-img nav__logo-img--light">
+<!-- HERO -->
+<section class="hero">
+  <div class="inner">
+    <div class="grid">
+      <div class="hero-copy">
+        <p class="hero-eb">Epselon Signals</p>
+        <h1>Buying-signal intelligence for the industries the SaaS tools forgot.</h1>
+        <p class="hero-sub lead">A builder wins a tender. A distributor commits to a new depot up the highway. It all lands on the public record, and almost none of it reaches a sales team in time to act. We watch the record for you and tell your reps which accounts are worth a call this week, with the proof attached.</p>
+        <div class="hero-ctas">
+          <a class="btn btn--primary" href="https://signals-demo.epselon.io">See a live demo
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <p class="footer__tagline">Revenue engineering infrastructure for B2B sales teams.</p>
+          <a class="btn btn--secondary" href="https://calendly.com/epselon/enquiry">Talk to us</a>
         </div>
-        <div class="footer__links">
-          <div class="footer__col">
-            <h4>Company</h4>
-            <a href="#services">Services</a>
-            <a href="#how-it-works">How We Work</a>
-            <a href="#results">Results</a>
-            <a href="#faq">FAQ</a>
-          </div>
-          <div class="footer__col">
-            <h4>Connect</h4>
-            <a href="https://linkedin.com/company/epselonio" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
+        <p class="hero-micro">The demo is the real app with example data. No form, nothing to install.</p>
       </div>
-      <div class="footer__bottom">
-        <p>&copy; 2026 Epselon.</p>
+      <div class="hero-art" aria-label="Example of the Epselon Signals feed">
+        <div class="panel">
+          <div class="panel-head">
+            <span class="lt">Signal feed / This week</span>
+            <span class="rt tnum">WK 28 / 2026</span>
+          </div>
+          <div class="feed-row">
+            <span class="dot" aria-hidden="true"></span>
+            <div class="fr-top">
+              <span class="fr-type">Tender award</span>
+              <span class="fr-date tnum">Tue 07:00</span>
+            </div>
+            <p class="fr-name">Meridian Civil Pty Ltd</p>
+            <p class="fr-desc">Won the Hunter Expressway package tender, $34M, awarded this week</p>
+            <p class="fr-src">Source: <span class="ul">AusTender contract notice</span></p>
+            <p class="fr-why"><span class="wl">Why now</span>Trade and supply packages on a job this size are usually locked in within the first six weeks.</p>
+          </div>
+          <div class="feed-row feed-row--compact">
+            <span class="dot" style="position:static;flex:none;" aria-hidden="true"></span>
+            <div class="frc-main">
+              <p class="frc-type">Development approval</p>
+              <p class="frc-name">Kestrel Developments Pty Ltd</p>
+            </div>
+            <span class="frc-score tnum">82</span>
+          </div>
+          <div class="feed-row feed-row--compact">
+            <span class="dot" style="position:static;flex:none;" aria-hidden="true"></span>
+            <div class="frc-main">
+              <p class="frc-type">ASX contract win</p>
+              <p class="frc-name">Broadwater Constructions Ltd</p>
+            </div>
+            <span class="frc-score tnum">74</span>
+          </div>
+          <div class="feed-row feed-row--compact">
+            <span class="dot dot--read" style="position:static;flex:none;" aria-hidden="true"></span>
+            <div class="frc-main">
+              <p class="frc-type">Estimator hiring</p>
+              <p class="frc-name">Ironbark Building Pty Ltd</p>
+            </div>
+            <span class="frc-score tnum">61</span>
+          </div>
+          <div class="panel-foot tnum"><span>4 new signals / 23 watched accounts</span><span class="pf-ex">Example data</span></div>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- 01 THE GAP -->
+<section class="sec band--dark" id="gap">
+  <div class="inner">
+    <div class="ledger"><span class="ledger-ix tnum">01 /</span><span class="ledger-eb">The gap</span></div>
+    <div class="grid">
+      <h2 class="h2 sec-h2">Every sales-intelligence tool was built for tech. Your industry got nothing.</h2>
+      <p class="lead sec-lead">ZoomInfo, Bombora, Cognism, Apollo. The whole category grew up serving software companies, because software buyers were the easiest to track. If you supply builders, distribute industrial gear, move freight or broker commercial cover, none of those tools watch the places your buying signals actually appear.</p>
+    </div>
+    <div class="gap-rows">
+      <div class="gap-row grid">
+        <span class="gap-num tnum" aria-hidden="true">01 /</span>
+        <h3 class="gap-title">The tools skip your market.</h3>
+        <p class="gap-body body">Type &quot;tender win&quot; or &quot;new depot&quot; into a SaaS intent tool and you get nothing. Those signals live in tender portals, planning registers and trade press the tools never index.</p>
+      </div>
+      <div class="gap-row grid">
+        <span class="gap-num tnum" aria-hidden="true">02 /</span>
+        <h3 class="gap-title">Reps run on a stale list.</h3>
+        <p class="gap-body body">The account list was right eighteen months ago. Since then projects have finished, contacts have moved on and new players have won work. Nobody has time to rebuild it, so the same names keep getting the same call.</p>
+      </div>
+      <div class="gap-row grid">
+        <span class="gap-num tnum" aria-hidden="true">03 /</span>
+        <h3 class="gap-title">You hear about the deal too late.</h3>
+        <p class="gap-body body">By the time a won job travels by word of mouth, the early packages are locked in. The supplier who calls first sells on timing. Everyone after them quotes on price.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <p class="gap-callout">The signal already exists in public. It just never reaches your reps in time. That's the gap we close.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 THE PRODUCT -->
+<section class="sec" id="product">
+  <div class="inner">
+    <div class="ledger"><span class="ledger-ix tnum">02 /</span><span class="ledger-eb">The product</span></div>
+    <div class="grid">
+      <h2 class="h2 sec-h2">A signals app in your brand, built for a rep to scan in a minute.</h2>
+      <p class="lead sec-lead">Your team gets a web app in your colours, behind a login only your staff can use. Open it on a Monday and it answers one question: who in our market is worth a call this week?</p>
+    </div>
+    <div class="prod-split grid">
+      <div class="feat-list">
+        <div class="feat">
+          <span class="feat-ix">A</span>
+          <h3>The feed.</h3>
+          <p class="body">Every new signal in your market, newest first. What happened, when it happened, and the link that proves it.</p>
+        </div>
+        <div class="feat">
+          <span class="feat-ix">B</span>
+          <h3>Accounts.</h3>
+          <p class="body">Each company you care about, with its full signal history and a score for how ready it looks right now.</p>
+        </div>
+        <div class="feat">
+          <span class="feat-ix">C</span>
+          <h3>The buying committee.</h3>
+          <p class="body">The decision makers at each signal account, named and mapped to roles, so the rep knows who to ring rather than guessing at a switchboard.</p>
+        </div>
+        <div class="feat">
+          <span class="feat-ix">D</span>
+          <h3>Routing.</h3>
+          <p class="body">New signals push into your CRM, inbox or Slack. Intelligence that sits in a dashboard doesn't get used, so we put it where your team already works.</p>
+        </div>
+      </div>
+      <div class="acct-panel-wrap">
+        <div class="panel" aria-label="Example of the accounts view">
+          <div class="acct-head"><span>Account</span><span>Last signal</span><span>Score</span></div>
+          <div class="acct-row"><span class="acct-name">Meridian Civil Pty Ltd</span><span class="acct-sig">Tender award, this week</span><span class="acct-score tnum">82</span></div>
+          <div class="acct-row"><span class="acct-name">Kestrel Developments Pty Ltd</span><span class="acct-sig">Development approval, this week</span><span class="acct-score tnum">78</span></div>
+          <div class="acct-row"><span class="acct-name">Broadwater Constructions Ltd</span><span class="acct-sig">ASX contract win, last week</span><span class="acct-score tnum">74</span></div>
+          <div class="acct-row"><span class="acct-name">Ironbark Building Pty Ltd</span><span class="acct-sig">Estimator hiring, last week</span><span class="acct-score tnum">61</span></div>
+          <div class="acct-row"><span class="acct-name">Coastline Industrial Supplies Pty Ltd</span><span class="acct-sig">New depot DA lodged, 2 weeks ago</span><span class="acct-score tnum">55</span></div>
+          <div class="acct-row"><span class="acct-name">Redgum Plant Hire Pty Ltd</span><span class="acct-sig">Fleet order, 3 weeks ago</span><span class="acct-score tnum">48</span></div>
+          <div class="acct-row"><span class="acct-name">Southbank Formwork Pty Ltd</span><span class="acct-sig">Crane permit lodged, 3 weeks ago</span><span class="acct-score tnum">44</span></div>
+          <div class="acct-row"><span class="acct-name">Wattle Grove Logistics Pty Ltd</span><span class="acct-sig">Depot lease signed, last month</span><span class="acct-score tnum">39</span></div>
+          <div class="panel-foot tnum"><span>8 of 23 watched accounts</span><span class="pf-ex">Example data</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 HOW IT WORKS -->
+<section class="sec band--surface" id="how-it-works">
+  <div class="inner">
+    <div class="ledger"><span class="ledger-ix tnum">03 /</span><span class="ledger-eb">How it works</span></div>
+    <div class="grid">
+      <h2 class="h2 sec-h2">From a public record to your rep's task list.</h2>
+    </div>
+    <div class="rail">
+      <div class="step">
+        <p class="step-num tnum">01</p>
+        <h3>We read the record.</h3>
+        <p class="body">Every week we sweep tender portals, planning registers, ASX announcements, job boards and trade press across your territory. On top of that standard watch, we find and prove sources specific to your patch. Those are usually where the best signals hide.</p>
+      </div>
+      <div class="step">
+        <p class="step-num tnum">02</p>
+        <h3>We verify every signal.</h3>
+        <p class="body">Each one carries a named company, a date and a link to the record it came from, so your reps can check it themselves before picking up the phone. <strong>When a signal can't be verified, we drop it.</strong> You get eight real signals before you ever get ten padded ones.</p>
+      </div>
+      <div class="step">
+        <p class="step-num tnum">03</p>
+        <h3>It reaches your reps where they work.</h3>
+        <p class="body">The app is the home base. The push into your CRM or inbox is what makes it turn into calls.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 HOW YOU START -->
+<section class="sec start" id="start">
+  <div class="inner">
+    <div class="ledger"><span class="ledger-ix tnum">04 /</span><span class="ledger-eb">How you start</span></div>
+    <div class="grid">
+      <h2 class="h2 sec-h2 start-h2">Prove it on your own patch before you commit to anything.</h2>
+    </div>
+    <div class="start-rows">
+      <div class="grid">
+        <span class="start-num tnum" aria-hidden="true">01</span>
+        <div class="start-txt">
+          <h3>See your market.</h3>
+          <p>We run a real pull on your territory and put live, checkable signals in front of you. Not a slide about what we would find. The actual accounts, this month.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <span class="start-num tnum" aria-hidden="true">02</span>
+        <div class="start-txt">
+          <h3>The build.</h3>
+          <p>Your branded app over your market: the weekly watch, account scoring, routing into your tools. Fixed scope, built in weeks.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <span class="start-num tnum" aria-hidden="true">03</span>
+        <div class="start-txt">
+          <h3>Operate.</h3>
+          <p>Markets move every week, so the system has to keep up. We keep the feed fresh, tune what gets flagged based on what your team actually wins, and report back on which signals turned into quotes and orders.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <span class="start-note-rule" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
+      <p class="start-note">Builds are fixed-scope and priced on a call, once we know your market and territory. You see your own signals before you commit to anything bigger.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 INDUSTRIES -->
+<section class="sec" id="industries">
+  <div class="inner">
+    <div class="ledger"><span class="ledger-ix tnum">05 /</span><span class="ledger-eb">Industries</span></div>
+    <div class="grid">
+      <h2 class="h2 ind-h2" style="margin-top:40px;">Where we work.</h2>
+    </div>
+    <div class="ind-table">
+      <div class="ind-row grid">
+        <span class="ind-status"><span class="tag tag--live"><span class="tdot" aria-hidden="true"></span>Live</span></span>
+        <h3 class="ind-name">Construction and mining supply</h3>
+        <p class="ind-desc">Tenders, development approvals and project go-aheads make this the richest public signal trail in the country. Our home ground.</p>
+      </div>
+      <div class="ind-row grid">
+        <span class="ind-status"><span class="tag tag--open">Opening</span></span>
+        <h3 class="ind-name">Industrial distribution</h3>
+        <p class="ind-desc">Your customers' capex is your leading indicator. New sites, fleet spending and contract wins across their market, read weekly.</p>
+      </div>
+      <div class="ind-row grid">
+        <span class="ind-status"><span class="tag tag--open">Opening</span></span>
+        <h3 class="ind-name">Logistics and transport</h3>
+        <p class="ind-desc">Contracted freight moves ahead of the market. Watch who is winning the work that needs moving.</p>
+      </div>
+      <div class="ind-row grid">
+        <span class="ind-status"><span class="tag tag--open">Opening</span></span>
+        <h3 class="ind-name">Commercial insurance and B2B finance</h3>
+        <p class="ind-desc">New assets, new ventures and expansions all create cover and finance needs, and most of them are announced.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <p class="ind-note">If your industry is not here, ask. The method carries; the sources change.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06 RESULTS -->
+<section class="sec" id="results">
+  <div class="inner">
+    <div class="ledger"><span class="ledger-ix tnum">06 /</span><span class="ledger-eb">Results</span></div>
+    <div class="grid">
+      <h2 class="h2 res-h2" style="margin-top:40px;">What clients say.</h2>
+    </div>
+    <div class="res-split grid">
+      <div class="stat-block">
+        <p class="stat-num tnum">8.2x</p>
+        <p class="stat-lbl">Return on investment against spend<sup class="tnum">1</sup></p>
+        <div class="stat-fn">
+          <span class="stat-fn-rule" aria-hidden="true"></span>
+          <p class="tnum"><span style="margin-right:10px;">1</span>Shaun Deacon, White Bay, client quote below.</p>
+        </div>
+      </div>
+      <div class="quotes">
+        <blockquote class="quote quote--featured">
+          <p>"Over the past year, we've gained about five repeat business customers, which I'm very happy with. Our return on investment is 8.2X against spend. This isn't just one-off wins; it's compounding growth. If we add another six clients next year, it just keeps scaling."</p>
+          <cite><span class="qn">Shaun Deacon</span><span class="qt">Managing Director, White Bay</span></cite>
+        </blockquote>
+        <blockquote class="quote quote--support">
+          <p>"The operational improvements from Epselon's work have already had a noticeable impact. Their team not only provided both operational understanding and technical expertise, but also took the time to understand our business."</p>
+          <cite><span class="qn">Jasmine Hikuroa</span><span class="qt">Corporate Account Manager, H&amp;L</span></cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 FAQ -->
+<section class="sec" id="faq">
+  <div class="inner">
+    <div class="ledger"><span class="ledger-ix tnum">07 /</span><span class="ledger-eb">FAQ</span></div>
+    <div class="grid">
+      <h2 class="h2 faq-h2" style="margin-top:40px;">Straight answers.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-row grid">
+        <div class="faq-q"><span class="faq-qix tnum">Q1</span>
+          <h3>Where do the signals come from?</h3>
+        </div>
+        <p class="faq-a">Public and licensed sources. Tender portals, council and state planning registers, ASX announcements, job boards and trade press, plus sources specific to your market that we find and prove during the build. Every signal links to where it came from.</p>
+      </div>
+      <div class="faq-row grid">
+        <div class="faq-q"><span class="faq-qix tnum">Q2</span>
+          <h3>How do I know the signals are real?</h3>
+        </div>
+        <p class="faq-a">Each one carries a named company, a date and a link to the public record. Check any of them yourself. When something can't be verified, we drop it rather than pad your feed.</p>
+      </div>
+      <div class="faq-row grid">
+        <div class="faq-q"><span class="faq-qix tnum">Q3</span>
+          <h3>What does the demo show?</h3>
+        </div>
+        <p class="faq-a">The full app, loaded with example data for a fictional supplier. What you would buy is the same app pointed at your market, in your brand, behind your login.</p>
+      </div>
+      <div class="faq-row grid">
+        <div class="faq-q"><span class="faq-qix tnum">Q4</span>
+          <h3>We already have an SDR team or an agency doing outbound.</h3>
+        </div>
+        <p class="faq-a">Good. That's the ideal starting point, and we're not replacing them. Most outbound teams work lists built on firmographics. We add the timing layer that tells them which accounts to work this week. Your team still does the selling.</p>
+      </div>
+      <div class="faq-row grid">
+        <div class="faq-q"><span class="faq-qix tnum">Q5</span>
+          <h3>Is our data safe?</h3>
+        </div>
+        <p class="faq-a">Your feed is yours alone. Every client runs on a dedicated database, logins are restricted to your company's email domains, and nothing about your market watch is shared. We ship an ISO 27001 control mapping with every build. That is a mapping against the standard, not a certification, and we'll walk you through exactly what it covers.</p>
+      </div>
+      <div class="faq-row grid">
+        <div class="faq-q"><span class="faq-qix tnum">Q6</span>
+          <h3>What does it cost?</h3>
+        </div>
+        <p class="faq-a">Builds are fixed-scope and priced on a call, because the price depends on your territory, the sources involved and how many teams use it. The way in is cheap: we show you your own market first, then you decide.</p>
+      </div>
+      <div class="faq-row grid">
+        <div class="faq-q"><span class="faq-qix tnum">Q7</span>
+          <h3>What happens on the call?</h3>
+        </div>
+        <p class="faq-a">Twenty minutes. You tell us what you sell, who buys it and the patch you cover. We tell you which signals are actually trackable for your market. Sometimes the honest answer is &quot;few&quot;, and we'll say so.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 CLOSING CTA -->
+<section class="sec band--dark close" id="next">
+  <div class="inner">
+    <div class="ledger"><span class="ledger-ix tnum">08 /</span><span class="ledger-eb">Next</span></div>
+    <div class="grid">
+      <h2 class="close-h2">See what's moving in your market right now.</h2>
+      <p class="close-sub">Have a look at the demo first. When it clicks, book a call and we'll talk about what a watch on your patch would look like.</p>
+      <div class="close-ctas">
+        <a class="btn btn--primary" href="https://signals-demo.epselon.io">See a live demo
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--secondary on-dark" href="https://calendly.com/epselon/enquiry">Talk to us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="f-inner">
+    <div class="f-grid grid">
+      <div class="f-brand">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAABWCAYAAADhecDRAAAQAElEQVR4AeydCbC1x5jHz1UYpZSZUilljLFvY98GEUQQgxFrmGDsS0SQicggESkiQ5DdDLGFCLGFCGLfxb4LgolYQiljMmrKpEwmlW9+v/ud89W993u7+136Pefc7z63+rn9vr08/fS/l6e30+8VJvEXCAQCgUAgEAj0QCAUSA/QIkogEAgEAoHAZBIKJGpBILAoBCLdQGCTIxAKZJMXYIgfCAQCgcCiEAgFsijkI91AIBAIBDY5AptYgWxy5EP8QCAQWBgC27Ztu2JQOwxyhRQKJIdO+AUCgcCuisBhZOwLQZMSBsejaJN6IukBsGECgUAgEGhEYBdwvB55uBN05aBJCoPbgM1NoaQJBZKEJjwCgcmE0dfR0CcydIfAadMicAmS7w3tHjTZiMFeYHIRlDWhQLLwhGcgMHEEdl9wSNE18AuzeRG4bGVl5dKg9RhQnJdBRRMKpAjRCAGCZSAQCAQCuwACoUB2gUKMLAQCgUAgsAgEQoEsAvVIMxAIBBaFQKRbEYFQIBXBDFaBQCAQCGwlBEKBbKXSjrwGAoFAIFARgVAgFcHcCqwij4FAIBAIzBAIBTJDIuxAIBAIBAKBTgiEAukEVwQOBAKBQGBRCCxfuqFAlq9MQqJAIBAIBDYFAqFANkUxhZCBQCAQCCwfAqFAlq9MQqJxEAiugUAgUBmBUCCVAQ12gUAgEAhsFQQWrkC2bdt2Zeia0K2gB0L7QU+EHgM9GLoDdG3oKstcKMh3dei60J2h+0L3h+4JmS/zt1D5keMKkDJeH/s20N0hZbw39l0h5dRPWa/G+zLUDeUVU2V9ODI9HrJu7IstxjfGvga0cFnHqJvmCzJ/N8S2nMy3GEjiIS6W2dXHSL8mT+S3LK+DfSfIvFj3bB835303yCvFayYZvOaAQOuGV1sWKowd1jHw/Rz0Y+j70IehM6BTobdDH4C+Cf0U+ipxToFsNFfkvZqBp52miipFjQ2UeFeFbNTK+l0EWpUT+xPQRyDzZr5W3Qn7BsiGf1X85mJI7xbQi0nsg5AyXjC1/ZCMMn6K9y9DynkhtmXxbewPE+8wSOUyt8ZNeiovBxHvQQbLXnmV9Uze3wpZN/QTY2VV7o8Q77nQtfDf9IZ82KE+kYyYT/Nn/bGcfBcDSTzERb9vE+dUyLp1NeJVNfBViafaxu3wb6wfuKv8VPjKbZ2yLL+OcObFumf7+AHv0pcJ/zboQVAjP8KFWTIE5qpAqBh+RtKRh43fzuyfweOu0F9AOWOH68dNnk4gG40N5qnwa+zYCdPV3JsIdlYpuiH+OwzpOiNS+f0CRxvHY7CvD6UqvnIq/1MJY8O/EB4vgkbp8ODrbOOh2DZQO6CXkO4DIWUslbllcWPC3h86GlK5/ApeNm5niKPMpOAvpio6O0QHEfuStnLkBgvm5dqEux90LHQBfN4EiTWvm8soN+Rg5FdIrqJ8OLb5M588NhrxsX6qcKxbv4bHiZBujRF6OB5AnFTb+Ax+65QWaTszfC3uDkjMh2WpPE3tw7xdk7B+V+UfsR3o/AAeDgjW8cUvzJIhYOHNRSQqxO1IyBmFFcRvKwxJ+1bwOgVy1GKnZiPidVxDHlSAKouvkpLKbzfsPsYGcxQRnVWpCKt1yshoQ30XvFVs98QegjPRV43y2rgtv6+ThjKraFY9h/yDl7O4Z8LDkamKbohSdaDxZHidC9+ToSG8YDMfo5yQClBlbf3aUB86yeFg5TnEsG69GL6+8zq+IS1nTpah7eMZpNg3bQcOryK+5ahi4THMMiJQo3PJ5otKZadrZXKk4ii4Vmev7LcgcUddx5NOlQ4Nfo0G/jbqk/F0+eA62DXMdWGiInw7/B1p8trfwMPG5uzOEV8tnNcKJM+Z8rZxu3xnOawN0/oZef1Y0/uJIK6D8w+fmXHk+ixePkca94N6ywiP0YxyQQ6mziWR50IqQKwqxsGNnflnSMN2UoVpiglp3B0/656zyBof2bLMnEm6lOoKAezDLBsCFtJoMlGpnLKeSAJOZ8fq4O3Y7Sz87Gitjh2R1xnTUHGoCO1E13kOfLEMXKqwod+8Ly+wdobnurIzkL5s2sZTZjslZzkubXUeaSLvvUjMjtPlJ/nxWt2ooJw1OcOpznwIQ/Jvnq23zsjHLDMHFV8gvf2GyFuIaxla96yDhaCdvZ1FfgD579w5ZkQYHQEr8SiJUOAqD0fX82q8fiDfzdSNSqRG/pxOP6oGowyP1c4O3NynyATb2Ys4duD/io9LTVhzNSrXP3VJEXldWrPjdJTcJWqfsMrnDPUFfSKPEYf8Owh5HryPh5QPa1TjjMBN9jHaorO9NyC9NtYoRt7vAjfzMUoCwbQfAqMoEApavkcikuvmWK3M5YT6I/R76LfQ76A/QJdBbY3LK46Ia1c0p+dtZbiUgOaji9xEWTUzJdJVEbg572GEVSaFf8p1MWF+Dn0P0p5hrew4tTaW1cErKyut41E3XN92Y9VOoW1CKihlVk7rhs+XtI1MODvsI0l7zFE4ybQ2zmTdA7OdtI5EQNuI+RYPn3FqbVRUx4LBQ1vHaBdQbNuWpTJb/9pxXh/KgdVLkL8rZuu5xFtVBMYqDE/wuMls5SoJbKdwEoEeBt0Wugn019CNoFtD94EOh+zssIrGpRHXfosBKwWwMX8eXi+E/h7aA/pbaE/okdC/Qb+E2hrXfY+hobTBbjIN91iYl8ryvwnzSmgv6GZ0+jeAbgvdgHfpltjK/hTs10PnQTZ4rEZjR3A48VvnDVntxJwptVmyMe0vkvJB0O6Q8l0PW7oZ9h2hx0HvhOxUsbLGtD0G7tJbNuCYnmBwN/h7us0ZOo9FcxEhLI9/wLZOWbck28UTcDsdUpFjFY0YeEqt91JpMYX1AS6bTCZfwemlkG1Bma1jf8e79UzZbf+8tjKPJ5SKBGs5DeXrTwI8Ou/xZgeEowlKWu4v+5su0/L3NK5EjJZeE+NSp9MUJ+tGplyzdEpb6gCt9IfA7EZ0QgdBZ0M/g/4AXQb9EboI+jz0L4S7PWQH/S3sknkWcqjESuGG+DvLeB0M7Iz3RMZXQOdA34DOh74EvRc6kDAqQxXkN3i2Y8TKGmduHjjIBpp62iFK09dG67O43hpZng99ERJ7nLYb3i+BfgMp+5ux94dU3irzgwllfBUljzvMx3l6C9TFeDrITeNcHPH5JAHuAonrScjyHei30J+gS6HfQ2J8OvajCaecKseSIrGB+VucmpvVJN/OUCedWXpEWTlKkX5CgEdAKnrL493k1bL7IfZ50Geh0yCVqAOuZxPW2RlW1jg7HxsDBxcq9jsi3+7QkZBtQZm/xvPHIeuZsts2rGNtZBe3/bO5W6An5evSrO3dOvkgROmyckHwzsZBiP3cg4npIPI5yDCq0iKddaaqAkF4+Tn6L52oUQnch0p0HGRHvE6ophfCXQ6dg9/e0HGQlRQraY5CnrZT6ySThIejbpXZgcjkcyLYdmfCqBDP4s3R/xHYJdlVvsrf5uCBS0KOLGHbaBzBPhYZinJujE0cFfoJuIu5o9+zeXa5SgWkMvIZp7KhLJx1OEuzjqQiqACej+c+pK0yU5nwmjeE/Q0h5O0I9995zhmX+sbez9opffJvvl3W9eTdTv5rHKwbzlr3IF/vg3xf473zI2FUrK/Bx9G9bYTHrHEW5HHnbKCeni47P4m4j0Ou4qoBYRwoWsceQBxnvVhZ8yiwVAlmA83bcyqTqx8m/TH+mad3YI9pHNRZ7qbl73T+jMS8oUHFwuP4xkpdMxVHwp5jz/G0Uj2EiqOdC9foRzzXv+1knJXkOhg31T3d1MhngKMjw72Rw5lRLv2dkiCOyvIVeDhaLHUMt5pMJh7HJXjWlA4NnEW6drBZJjlP4qsAv0YYR8QqzkNwa9PYiTJxmc16puLMKUSxNIyDChvGaty2/5DHAYbLJfsQJ6dElOVQGvxYgwuSbzSeUCp12mLg3oj7SirpRkYpRzD4GX4udTlY4TFpxOBwMHC1IBmoh4f1+5HI4cywVL/XsSfOd3CwbpVmIipgl3kJvlTGQfOVkOh/IAc/KsbO9Zi4rQ2YWeddPXB52vZpXJXr3Oq2FclEa5HrmjnhbRSPJuOOinunSXwrpzOdDxWYHEQjqblc4ejqYaSvEikk3exNXAvdpS/lt8NoDjiZWDb7I792Kozupfz5a2DDDSZkV5F8Evu0jsycJZWUoftgJ8A7h0kxWeKfTyCn83ZmPDYa9wBqbyY3JqTjtAxdrs3NFA3qzONl5KH1zM5Ia4m45lsl4mxxrdfGZ5VHSaFtjFN6P4r0XX4shWv0J66zZAeHuTpgexh7aahRvoLjrB2OrjgScjiw1ksl5gqGz6OThVElERqJ65O5Eb+V4ggqyQ9rJAgf+bnemBtdO1KpdX5cpXUA6VaRHwxeDZUam/J7soygSZPLv5H2oGzmVqFMsIGsF7mBhaNPN+Qt04bo3ZwoI0djL8/Est7Pcy3dUbNr1RmRJu6PuSw4GAPyrwKybTgjyaX5NOpGSanl4q/1s104MFrr1uf5fURyEICVNB6oSHrW8ujIxzplFLHXnjfN0lUOaS7p10zIdVWncSnBXfKouiZIQ3Em429NUmnacbp5nfLv4u6+jZW7S5xkWGR3enskAbSxGo1rmW7GNXpOHUsKxA02jz/W6iimybaz6KCsY566SUWwwzwePNz/SIXp4/5mIuVO+HhJpB07wUY3/pLapYVUQtYBD5JUwwA8bRvOclNp6u6JJjd+fR5KJ5KmSymD+MDDGVSpnc2r3AblZStEtnHXyqcbxHbYKX5voHIMrmANzD0JNJu+NXhPSqd+muJsdLOTOwb5Z1p+o3/fd0edHy1E3nvaCaeCOXrPdZSWyWFE9pfuT4aXSxe8zs2YXm4WZUdXWm7pLCxl5Vp6riMSl1qdZ0k+N4hzYTzR5v5NLkwfv/cSyYEbVtLUGGDZLkwrmUhHD2/rzUXJKeNcvPCrjEBNBZJrjFawUkfZN2t2QC5ZpOL7vYShIxY7I3+TkEqjlzudnMtibytE9iqK2frqTkHh4b5SaS/IeJ4+ehMP3qz7IxSJvwfwUkSv6fbses26MJmQ0NR4rDDX4D9KHtxbmgavanmppMo/xdSTZSm/Ku7grKIS+xQ/5TsZDLRTYXq5w9MZjUfqc/GdiQ2dnTqIqVmGHoLI8cvVp1xew68yAjU7DTuKlHhWZK+T8E6bqkSCXsbnVJzHRuMyUM6/MdIGx2/RGHOj/A3BO736GwvxSUVybym3NGg8f5yXa3CGmZEdmpvIbqDauXgDrN9j8Art99Ph+SNGP+Z1U55z+xYzfiXb00e5euZ3YarWCeRe5Ydgh0K5jtlrx3OyEX2wcfCSO33mEqQd8OCEEgw+jbsDFaxGo3xDy/krtI8czo0JZxyV10FnKogfoRsqc4p3uHdAoErjocHaQHKjAv1dy3c9fgyyQ0xl2w7TRpLyb+PuN0jahOsTBNYLJQAAEABJREFUxo7fpaxc3JICtAPyvq4+jVgF651UYujJJG8Q8JsUfkfEq9udqXjrbq58c7L7g8Scv3tnY9QJefpjTMs/lb7La0NH3yneM3eVfy4NfxjoLHIWvrbt5rYz6BRf22bfsp3x/I/ZQyVbBSKl2NlvWW9T/lvdfW75tyBqJGYlrMFnLB5D5RutgU9Hbi7D5fJuB5/0n/Lw9yWl38YkeTR42EBVKs5UvHX3pwwUvJCv66m2rOwN6c7TyTzmFEwNWVQguTRKJ6UGyTCtG953luJjH+Av5FP+bdxze5Bt4jeF6TMYauIzL7fZICG3mjC2LP4GxTRmsvg8Kll5aiSw7NPJ5B5Cy8yP0UDWJu0yxtr3jc9F+acdhae6PJ5aUkgb+bd5d5TqV+/8xsZrUSaO3tvEK8rehskmDlPqnP364NjZK9WHoWXkyamx87C0/GkL9qOzcs7N9kbLw7T9z5bZ27bNwfKY8cFMYJCbbuK9cDN0VDD2aCi33it4rcrJSgS9kQheaeGZfCtUbdkd3XibrFfne/MAyWVN7fSziXX0FPed6m5HHhE8EHCW6R7wfwJFaTmaIKMZL3X9X7jfGaXm3imP45pWHVMLEYZ20C2SGBRk6Axi6BJYSXgrYC5MJ3xRIr+EDoDh30BeWOfvb1QmvFYzbo77Ea8SNss8OhXXsRVICXcvQqxWKAlGpetuxCERNZxTCNBJXw3yR7Jefuqv6N9CuxvjpwopEda5k7an12zrDto8YXlv5KvVx69La/ZSi7l7BAo947tMtnKVGnFJ3lInWYqf9J8WcGnK6UZ7kkfKgwp1MfQOyKs97Ki8Ll/F4m9nPPrsdFt8UixK7iq+k8lDbo2/tHxSSmNMf3/ANyT/bWQrYewlk2349ApD2djGS4cwbL+9+G/xSO6hOfOwHnmQZWHKY005WN+8Z9CVAuuW5b/Gu+5jFeZ0UI5gtq/jN8tnJ+IVx17GN2/yOwQC2ixZO1c73nYhu4eyEjqaz8XMbYLm4u3wo4y8Bv172K+DvC3VZS5PSEneneQmvD9os6wszx1xCw/ebJtbyvI0V46Ft4nOu07M0nshWIw9A7Fd2MGkMPDbEe4vpfyHunsQIjdAcXAydIY+VMbNGl/sXCr2pJt16kEo7NxgatR8krZ70c6G/E2ebfmdY9fvKgpkioogTh93sqzA/pbC66kXQUNnIPecFs5OGavgoPIQnxQrOx+nxyn/Xu5WLMjvaniM1G9N2Jl65Ygfa/KDRU+DsXd1lUboKkCXyQjeaByZ5Trp3ZBjEXXCNF0zbhS6oqNlZ0eTYuksLvdL/VS8tu5eMZ7r1JRvGUbObfOzNOGot16Matn6W5tfI5gfOXNGwuNCjIrDlQb72tUbgceWoqYC+VxGWCuwZ/IzQZbayyWA3K+JewmPUhJ/vyqXi+/sqcuMIMer6Eej8HpolYqb8SoUr9i2keTiWnFT/h5TdVqd8lc5jzkCT6U7F3fwdKPe5cJUetYBlXXKv4v7urDUL5V7qX7Z0ThIWRc3XtojQBk7QFIRW5a52Xh7ph1DUtam7WzTmLY57dHJRGsl4lUfNpYUP2/+nMvJgJQAA9xVgH5DoiZeiuNoZT8fMuSXDa2gmSDjeNEwHGF5BY3fL8nNRK5BBW48CgoPl0dyJ1Mcgfup0nEysRxc/cBQTpKHgp8z0VyYPn4O2vwuTi7uB3Ke4dcagdksbpF93J9PpZ3JMn0dz6rZIdpJqIVT0qod/VFayr+3O43v2tDDoZr52SiPSwE1LmZc5TuV1W8f5DboVRxe1bIaJ/cPfl7vkFsKy0Uv+bnUk6uUrr1KKT5npjym7gcj/yizEPj6BbuxcJmKX7Rcj1aRpgKK3bHI6kAlFaaTO7zE09t4c23C9qpsnXhH4EYEZgOsHN6NESs6ztKeyVKRdTOrWYLNvh1cGWm6zPLWTBTTOpKK7eWAmWDdvODnyNdLAr1+4594790ICym7HHAK/B0xF4K28n4qodzwwkoap6LFW1qRyTz7/QuvHnk878qaZNrDQ36mkYpq2UopfzspN5NT/l41czRy53ik4ibd4efVLNaLj/HsACYZdmQPD0E4k8sl45Xv/hA0F6aVH3kVx+MJ7PdksJLmFNptLF8l4QmPEgJWtFKYLv4eD811FI62z6SCe7ysC9/GsPCx4/kgnn6sx2Nr3gflsVKfca5u3At5O+kOup6D+M5mbOC5TlnhT6WB55YFDSM5s3sOD573PxX7U6Th3kKt8vWklaNkWDcaZydSoyd58BCDFz42+k8dn479AuQuYUKwvJEHpHJWecjPjlRMvHcrH3kEX/LviPBYWJc668OQ+3mQMhO8uyGu5WQdMP85Bu5L+c2UXJjwCwSyCNTqYFYToaF4BPTk1Zf0PzthlUjvNV8ayRUhl5P8boAjt1lq5seO6Az8ncLP3Gvadv7eWuv+RSe+yOQyk529Ss+ZUy6+WJ6eC6AfPMXhGJ5nnY4Y+MlP193fg//dod4KlbjycqmNJJLG48HOQJMB8PBzreaJx0aj3C65HEGaQ+RVudtZOytdi7Ezxw/C25uGTatRiBEdPY1WKk/lciZ5InKaj07iEMeB2RlEck9JXjw2GhXaq2ivKpHGAPN3jBQ3IwK5StY3P7Nz0bn4Kg9HhI62Om060UgcTfoNjQ+TwI2hjcY8uXThsoUzlI3+Nd7tVL+ALC+CnFUVeRLOo5ruBfgFRUeJpThH0cBzHe4EnnYYYtEkg52wv5L9DAn5MannTsPzWjaE9Ve2zmrcgymVkWWRZUpePMl1OIHc18FqNCrBF+HjdeydTrNM5bXj9Hp65XbZDVbrjIMKFYv+6zzGfiH/dtoqSGdjueTE4JkEOJc8ua/nO69pQ7irQM8ixLmQt15jZY3KzFN22UDhGQiUELCzLYXp5E9DsaPwWGJpRGpjdsnpAiq/y07+CMfN8HUNBj8/duRyjNN7G8i3EciTS00dBF47jKdPvD22FG5HhI4PXp52FHG8pfZtyGlj90dh1+V5N8gPWd0O+xmQs4FvEtbGvS5/uDUZ9wxcDmzyW3WDpyNUP5hU2iA2PY8gOypX1h8T15mJeIq5H5S6OW7S3bDdQ/E7IReQ0ImQ6WAljUrurKTveg+vWSh9uc46eT+ifRdZHGQ8E1sc1yld3JzNKfN+PKsUlNc9uKZBBex2GBWr3zyxLHY4zuOBtiFWHqstLWUpjjNcBxwXkj/33jwM4GzSOuY3VO6Fu2XlAMILGZ35l+qCfL1a5mnIklxyNFBQbwSsv70jD4i4kHRHSZTK+SWAsHPNjTYJsmrsoBw9eZzQDxvNvpj3fRrIhYT4EeRS1dHYrmG3ldkTJocgS5s9BFj3NsrverNXnn8dLv7y+sfY34UcDb8W2w6xrSJzD+nAFnI7i5t1GCTRyoidHdO+hBZPl9JUyio3yd/y2Am7wa+CJFjRvBxZcyeMdjAgnPXhIBwcAWNljYrP5Un3TsTRgcYvqBMqFvG1biizSzYuC7aV15mAs+TSpnZWuAGeDg7cLBeLNmzc13JZ1sGC5WMdk2wTlpV1zzrYhpeKS+XxrTaBI0wnBMTWCM7crbs+z5NmqwT/R6Jt6xZBhxk7lGEc0rFfjdcJkA0Wq2iUxaUYO0VPzLjk436JM5WuBfITUnsAHVabjoqgRdMmD8rvmrsFqczajnaLzNcEcPb2COT2UrQ1zjs/EsZfid8HH79o2EY+gjYaZVRuqSvOytBpKQS5XcLx6hRPJjUK1OCojCoIlyRdwlQJuqehzA3Bk07i5JUthyLH3BrZWmlIVxmOw00l4jOPrc2sjomHz60jEtCB1PNJ/508h6mPgPXa8nSmbN2sn0Keo32lIZxhSj6PTl0rYWuBqKg20BcSwXVfn3mci3FkuSfp565W6SqIyy7ndY3UMbwVcB/kLh7bnfEl7Kqi5P0QqNUsgHC1jL/7eQIy2DF14kkc5d6bSGNjShI7jI3qQN6OIP3OMhOvmiF924OK7AiY+ow1qnE5+QDSPWnUVLYq8+359kCC15lciVcPauzLbDl3QwPBhhn4u/f1QOzHwMkfjWJNvEViNhvyfVQaTYEoNRXWxvEynh1xuv7L42jGG0X9xbQjeAuzZkLK/gAYqpywqhs7UmdM/pq/E3Mw/hPkTM8LH531qYg68egY2DJ1L2Nv0nW5rWP07cGJ6yxrL95Og8bs0JX3HNK4C2l6kaSjRF4Xa5BFOVQiXsLn733GEshZuAOqOLI7FsLwnZanp+xcWrQ8XbLuOkOGU2fjSoeRzuefB15cFeBxPmZUBWIWBBZ6H8/e/molrq0dHVnKd3fSeQ3kaIvk6hr4qkRs7C49uNRUIwFld1S4F/wHrUsT/yLoUITyIkRnJCql2h2z+0re5Psk0hqMATxU+k9BZm9MdlZip8prFSMv7xGT98NIq+aMtIqAyORVMWfDzLbhslbNuiu21lWVh7NFkgkzJgKUp/fIfRbby0n9jMJYA87VbJCOg0dv3DWt9/LuJYoOmFb95/FvdAUyywSZs/PxdNaeuDnqtPPksbexgXgVuA3kKfB3RNubWZuIpGEFeSlh7wG5lty3sIznspiK4yD4mhdYDjfw8mNSdkbeDOoeySvhaudph8pjL2MHdDAxHcWfThrVFNPKyspl8LMTvQv894ccMWP1NubTmZyKzkHFWfCvJm9vqTIRke+3kEp/d4I5uxsyyPJ0lYMSy+ql8PUdtmECgfoIzE2BKDqV2RHX17A9yngj3Bwxq6Ud3dup4pQ0drLeamrj2IdQN4DPs6FBI3f4dDakeR7k901uSWQ7aDu9UqO3Ibu/4ZLeLYn/SMiOGRb1Dbz9/scXsf0RoN/8+EtSeQhk+u/GFjc3sl2GElvJcnAmIM7O6uzQjWtndAK8ai8NIsZ2A+8/QG7Iq/gcZLweH3EVNx6TRtyV2aPEnvCyTBxUnAa/GiN6T4GpjFKkck4K18UDef1B5uzjX6bnzN3yUSmmWNluXDLx2Lcz5L+Cj4MS3VJxurp7wlB5UuSpy648c+EdXKpQU+n5UbQaZZuTIfxaIDBXBbJWHir57yDX7L0u3E7qJvjbcbjkoIKx8thJ2+m5vu/nWe9BHBvHh7CtZERZnEGGn0B20I4c/Y6GI35nWVZ+DxC4J2OH4Ohafzs2N3Ht8OYmODKquMX7bJ5N3z0pZb49Qoi92Eo+24HvQThnda/HVlnmOjBY1DOkp6yfx1Z5KaO4Wf7WE+uDS15+f8R6It7WmzsS3mWqk7DPh6rJCy+XJPxUaYrs4OsBACfS9DstKgTzaJmYR/Pqu21DUlk4E9bv9sRxWdFvnFRvF/B2aSSVf92rzv5Jz6UZl4Hk3UQu2ThwAK0wQxAYGndhCmQmOJXFDsPR5895tuNwLc/RoxXH9T07PUdmNqqlXIpAbiu8S0ef5vmN0HHQKyD3ZKzszrpcplga+ZHNGYq4X8yz2Eq+/5F3R7WzIlqYjRziKm6W/84cS2QAAAHPSURBVDm8Wx/ejO0ymvVEvN37qd5pLizTaxImn7YNy+dnPJtX82zbkFQWzjBtN6VZ2hqu8RgI1ENg4QqkXlaCUyAQCAQCgcA8EQgFMk+0I61dC4HITSCwxREIBbLFK0BkPxAIBAKBvgiEAumLXMQLBAKBQGCLI7BABbLFkY/sBwKBQCCwyREIBbLJCzDEDwQCgUBgUQiEAlkU8pFuILBABCLpQKAGAqFAaqAYPAKBQCAQ2IIIhALZgoUeWQ4EAoFAoAYCoUD6oBhxAoFAIBAIBCahQKISBAKBQCAQCPRCIBRIL9giUiAQCCwIgUh2iRAIBbK9MLyMz++VpOi/tgeL/4FAIBAIBAIzBEKBgMTKyorXw18PO0V+Q4OQYQKBQGAXQyD6wAEFGuANAG8zRg2ZA4FAYAcCV+HpjG3btn0kaD0G4HImdC0oa0KBZOEJz0AgENhFEbiYfPkFzptiB00mTRj4ldLfgU/ShAJJQhMegUAgsAsjcCR582uPc6TJZkxrf5b2LwerRhMKpBGWcAwEAoFdGQE6xUuCVlphkKsHoUBy6IRfIBAIBAKBQBKBUCBJaMJjyRAIcQKBQGDJEAgFsmQFEuIEAoFAILBZEPh/AAAA///Pn0o0AAAABklEQVQDAJNh63C9Dd8oAAAAAElFTkSuQmCC" alt="Epselon Signals">
+      </div>
+      <div class="f-cols">
+        <div class="f-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a class="ul" href="#product">Product</a></li>
+            <li><a class="ul" href="#how-it-works">How it works</a></li>
+            <li><a class="ul" href="#industries">Industries</a></li>
+            <li><a class="ul" href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a class="ul" href="https://www.linkedin.com/company/epselonio">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>Elsewhere</h4>
+          <ul>
+            <li><a class="ul" href="https://epselon.ai">epselon.ai (automation systems)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p class="f-copy tnum">&copy; 2026 Epselon, Melbourne</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn');
+  var panel=document.getElementById('menuPanel');
+  btn.addEventListener('click',function(){
+    var open=panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  panel.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){panel.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+  });
+})();
+</script>
+
 </body>
 </html>
